@@ -1,0 +1,23 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find conveyor_control)/config/conveyor_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/conveyor" args="joint_state_controller
+            servo_front_right_position_controller
+					  servo_front_left_position_controller
+            servo_back_right_position_controller
+            servo_back_left_position_controller
+            front_right_wheel_position_controller
+            front_left_wheel_position_controller
+            back_right_wheel_position_controller
+            back_left_wheel_position_controller" />
+
+  <!-- convert joint states to TF transforms for rviz -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/conveyor/joint_states" />
+  </node>
+
+</launch>
