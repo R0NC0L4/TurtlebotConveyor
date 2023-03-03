@@ -3,6 +3,21 @@
  #include <ros/ros.h>
  #include <std_msgs/Float64.h>  // For geometry_msgs::Twist
  #include <stdlib.h> // For rand() and RAND_MAX
+ #include <termios.h>
+
+ int getch()
+{
+  static struct termios oldt, newt;
+  tcgetattr( STDIN_FILENO, &oldt);           // save old settings
+  newt = oldt;
+  newt.c_lflag &= ~(ICANON);                 // disable buffering      
+  tcsetattr( STDIN_FILENO, TCSANOW, &newt);  // apply new settings
+
+  int c = getchar();  // read character (non-blocking)
+
+  tcsetattr( STDIN_FILENO, TCSANOW, &oldt);  // restore old settings
+  return c;
+}
 
  int main(int argc, char **argv) {
    // Initialize the ROS system and become a node.
@@ -24,23 +39,49 @@
      std_msgs::Float64 msg_br;
      std_msgs::Float64 msg_bl;
 
-     msg_fr.data = 0.785;
-     msg_fl.data = -0.785;
-     msg_br.data = -0.785;
-     msg_bl.data = 0.785;
+     int c = getch();   // call your non-blocking input function
+     if (c == 'a' ) { 
 
-     // Publish the message.
-     pub_fr.publish(msg_fr);
-     pub_fl.publish(msg_fl);
-     pub_br.publish(msg_br);
-     pub_bl.publish(msg_bl);
+        msg_fr.data = 0.785;
+        msg_fl.data = -0.785;
+        msg_br.data = -0.785;
+        msg_bl.data = 0.785;
 
-     // Send a message to rosout with the details.
-     ROS_INFO_STREAM("Sending random velocity command:"
-       << " front right=" << msg_fr
-       << " front left=" << msg_fl
-       << " back right=" << msg_br
-       << " back left=" << msg_bl);
+        // Publish the message.
+        pub_fr.publish(msg_fr);
+        pub_fl.publish(msg_fl);
+        pub_br.publish(msg_br);
+        pub_bl.publish(msg_bl);
+
+        // Send a message to rosout with the details.
+        ROS_INFO_STREAM("Sending random velocity command:"
+          << " front right=" << msg_fr
+          << " front left=" << msg_fl
+          << " back right=" << msg_br
+          << " back left=" << msg_bl);
+          
+     }
+     else if (c == 's' ) { 
+
+        msg_fr.data = -0.785;
+        msg_fl.data = 0.785;
+        msg_br.data = 0.785;
+        msg_bl.data = -0.785;
+
+        // Publish the message.
+        pub_fr.publish(msg_fr);
+        pub_fl.publish(msg_fl);
+        pub_br.publish(msg_br);
+        pub_bl.publish(msg_bl);
+
+        // Send a message to rosout with the details.
+        ROS_INFO_STREAM("Sending random velocity command:"
+          << " front right=" << msg_fr
+          << " front left=" << msg_fl
+          << " back right=" << msg_br
+          << " back left=" << msg_bl);
+          
+     }
 
      // Wait until it's time for another iteration.
      rate.sleep();
