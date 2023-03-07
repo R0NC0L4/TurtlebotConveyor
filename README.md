@@ -10,6 +10,8 @@ The robot can move thanks to 8 DYNAMIXEL XL430-W250-T servomotors (4 for steerin
 
 - [Components](#components)
 
+- [Assembly Instructions](#assembly-instruction)
+
 - [Useful Links](#useful-links)
 
 # Components
@@ -44,6 +46,10 @@ Screws
 
 - 64 x M 3x10 mm
 - 24 x PH_T 2.5x20mm
+
+# Assembly Instructions
+
+ToDo
 
 # Useful Links
 
