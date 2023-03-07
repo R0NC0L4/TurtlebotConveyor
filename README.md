@@ -18,9 +18,9 @@ To be 3D printed from this [link](https://www.thingiverse.com/thing:3069758)
 
 - 16 x CONVEYOR_ASM_-_WAFFLE_PLATE
 
--   4  x CONVEYOR_ASM_-_Omni_Cover
+- 4  x CONVEYOR_ASM_-_Omni_Cover
 
--   4  x CONVEYOR_ASM_-_FR12-H101K
+- 4  x CONVEYOR_ASM_-_FR12-H101K
 
 Electronic components
 
@@ -42,7 +42,8 @@ Motors
 
 Screws
 
-- ...
+- 64 x M 3x10 mm
+- 24 x PH_T 2.5x20mm
 
 # Useful Links
 
