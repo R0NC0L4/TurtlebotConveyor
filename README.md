@@ -38,7 +38,11 @@ Motors
 
 - 4 x [TB3 Wheel/Tire Set](http://en.robotis.com/shop_en/item.php?it_id=903-0260-000)
 
-- 
+- 2 x [Robot Cable-X4P 240mm 10pcs ](http://en.robotis.com/shop_en/item.php?it_id=903-0245-000)
+
+Screws
+
+
 
 # Useful Links
 
