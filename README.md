@@ -48,6 +48,8 @@ Screws
 - 24 x PH_T 2.5x20mm
 - 16 x PH_T 2.6x12 mm K
 
+[Parts of TB3 friends ](https://docs.google.com/spreadsheets/d/1vbIFMRJMbyOd2D6BtwV1Ow_yBc9xRHktqZhTTmwI_l4/edit?pli=1#gid=0)
+
 # Assembly Instructions
 
 ## Setup joints (4 pieces)
@@ -111,8 +113,6 @@ Fasten the four wheels onto the central body of the robot using the screws and n
 The *final* *result* of this section is the following.
 
 ![tb.jpg](img/tb.jpg)
-
-
 
 # Useful Links
 
