@@ -96,6 +96,12 @@ Do the same thing for the bottom plate.
 
 <img title="" src="img/bot2.png" alt="bot2.png" width="522" data-align="center">
 
+### Assembly of the central body
+
+Fit four WAFFLE_PLATE  together and fix by tightening screws and nuts (M 3x10 mm).
+
+<img title="" src="img/plate.png" alt="plate.png" width="539" data-align="center">
+
 
 
 
