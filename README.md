@@ -76,13 +76,11 @@ Put two screw nuts in the same point (they are in the Dynamixel box).
 
 Insert the wheel motor inside the Omni_Cover and fix using two PH_T 2.5x20mm screws. Finally, insert the black screws we had removed earlier in the holes indicated by the red arrow.
 
-<img title="" src="file:///C:/Users/andre/Desktop/TurtlebotConveyor/img/conn.png" alt="conn.png" width="410" data-align="center">
+<img title="" src="img/conn.png" alt="conn.png" width="410" data-align="center">
 
 The final result is the following.
 
-<img title="" src="file:///C:/Users/andre/Desktop/TurtlebotConveyor/img/final1.png" alt="final1.png" width="312" data-align="center">
-
-
+<img title="" src="img/final1.png" alt="final1.png" width="312" data-align="center">
 
 # Useful Links
 
