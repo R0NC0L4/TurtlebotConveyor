@@ -2,9 +2,7 @@
 
 This project aims to provide a guide for setting up and moving the TurtleBot3 Conveyor, a mobile robot with four wheels and four joints.
 
-<img title="" src="img/tb.jpg" alt="tb.jpg" data-align="center" width="484">
-
-The robot can move thanks to 8 DYNAMIXEL XL430-W250-T servomotors (4 for steering and 4 for driving) connected to an OpenCR1.0 Board. Communication with the Arduino Board can be done either via joystick, using the RC100 remote control with BT410 master-slave Bluetooth modules, or a Raspberry Pi 4 using ROS. We're going to explain both ways.
+<img title="" src="img/tb.jpg" alt="tb.jpg" data-align="center" width="484">The robot can move thanks to 8 DYNAMIXEL XL430-W250-T servomotors (4 for steering and 4 for driving) connected to an OpenCR1.0 Board. It's possible to communicate with the Arduino board in two ways: via joystick, with the RC100 remote control with BT410 master-slave Bluetooth modules, or via Raspberry Pi 4 using ROS. We're going to explain both.
 
 # Table of Contents
 
@@ -52,35 +50,37 @@ Screws
 
 ## Setup joints (4 pieces)
 
-First of all, screw the FR12-H101K to the Omni_Cover with four screws (PH_T 2.6x12 mm K).
+Fix the FR12-H101K and the Omni_Cover by tightening four screws (PH_T 2.6x12 mm K).
 
 <img title="" src="img\omni_h.png" alt="omni_h.png" width="443" data-align="center">
 
-Then connect the Dynamixel to the FR12-H101K using three screws contained in the servo package.
+Fasten the Dynamixel onto the FR12-H101K using three screws contained in the servo package.
 
 <img title="" src="img/servo_h.png" alt="servo_h.png" data-align="center" width="438">
 
 ## Setup wheels (4 pieces)
 
-Mount the tire on the rim. Then screw the wheel to the dynamixel with four screws found in the motor box.
+Mount the tire on the rim. Then fix the wheel to the dynamixel using four screws contained in the motor box.
 
 Remove the black screws, as shown in the picture.
 
 <img title="" src="img/black_screw.png" alt="black_screw.png" data-align="center" width="477">
 
-Put two screw nuts in the same point (they are in the Dynamixel box).
+Put two screw nuts in the same place (they are in the Dynamixel box).
 
 <img title="" src="img/screw_nut.png" alt="screw_nut.png" data-align="center" width="510">
 
 ## Connect the joints to the wheels
 
-Insert the wheel motor inside the Omni_Cover and fix using two PH_T 2.5x20mm screws. Finally, insert the black screws we had removed earlier in the holes indicated by the red arrow.
+Slide the wheel motor inside the Omni_Cover and fix using two PH_T 2.5x20mm screws. Finally, tighten the black screws we had removed earlier in the holes indicated by the red arrow.
 
 <img title="" src="img/conn.png" alt="conn.png" width="410" data-align="center">
 
 The final result is the following.
 
 <img title="" src="img/final1.png" alt="final1.png" width="312" data-align="center">
+
+
 
 # Useful Links
 
