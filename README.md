@@ -104,7 +104,13 @@ Fit four WAFFLE_PLATE  together and fix by tightening screws and nuts (M 3x10 mm
 
 Repeat the same thing to create a second one.
 
+### Fix the wheels to the robot body
 
+Fasten the four wheels onto the central body of the robot using the screws and nuts (M 3x10 mm).
+
+This is the result.
+
+![tb.jpg](img/tb.jpg)
 
 
 
