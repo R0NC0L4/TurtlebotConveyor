@@ -102,6 +102,8 @@ Fit four WAFFLE_PLATE  together and fix by tightening screws and nuts (M 3x10 mm
 
 <img title="" src="img/plate.png" alt="plate.png" width="539" data-align="center">
 
+Repeat the same thing to create a second one.
+
 
 
 
