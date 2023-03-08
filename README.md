@@ -108,7 +108,7 @@ Repeat the same thing to create a second one.
 
 Fasten the four wheels onto the central body of the robot using the screws and nuts (M 3x10 mm).
 
-This is the result.
+The *final* *result* of this section is the following.
 
 ![tb.jpg](img/tb.jpg)
 
