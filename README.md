@@ -82,6 +82,16 @@ The final result is the following.
 
 <img title="" src="img/final1.png" alt="final1.png" width="312" data-align="center">
 
+## Fix the wheels to the robot body
+
+Fasten the joint onto a WAFFLE_PLATE using screws (PH_T 2.5x20mm). As before, it is first necessary to loosen the black screws and replace them with nuts.
+
+<img title="" src="img\up.png" alt="up.png" width="501" data-align="center">
+
+Do the same thing for the bottom plate.
+
+
+
 
 
 # Useful Links
