@@ -159,7 +159,7 @@ First, you must install the Arduino IDE and the OpenCR board by following this [
 
 Now you can use the example code of the OpenCR libraries by going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl". This script allows the OpenCR to communicate with the configuration software.
 
-![00.png](img\00.png)
+<img src="img\00.png" title="" alt="00.png" data-align="center">
 
 Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
