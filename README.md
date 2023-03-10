@@ -213,6 +213,8 @@ Connect the RC-100B to the OpenCR plugging the BT-410 master into the controller
 
 Then try to move the conveyor by using another example code. You can find it in: "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allows you to use the RC100 remote control to control the robot.
 
+<img title="" src="img/moving.gif" alt="moving.gif" data-align="center">
+
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
