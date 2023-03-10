@@ -209,7 +209,9 @@ First, you must create some Daisy Chain because the OpenCR board has only three 
 
 <img title="" src="img/chain.png" alt="chain.png" data-align="center">
 
-We try to move the conveyor by using another example code. You can find it in: "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allows you to use the RC100 remote control to control the robot.
+Connect the RC-100B to the OpenCR plugging the BT-410 master into the controller and the slave into the Arduino board (further information [here](https://emanual.robotis.com/docs/en/parts/communication/rc-100/)).
+
+Then try to move the conveyor by using another example code. You can find it in: "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allows you to use the RC100 remote control to control the robot.
 
 # Useful Links
 
