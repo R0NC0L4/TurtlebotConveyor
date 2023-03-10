@@ -207,6 +207,8 @@ Repeat this for each motor you have:
 
 First, you must create some Daisy Chain because the OpenCR board has only three TTL ports (see more [here](https://github.com/ROBOTIS-GIT/turtlebot3/issues/638)). You can connect the board and motors using Cable-X4P.
 
+<img title="" src="img/chain.png" alt="chain.png" data-align="center">
+
 We try to move the conveyor by using another example code. You can find it in: "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allows you to use the RC100 remote control to control the robot.
 
 # Useful Links
