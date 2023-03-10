@@ -157,9 +157,9 @@ First, you must install the Arduino IDE and the OpenCR board by following this [
 > 
 >    8.3 Communication Circuit - TTL Communication
 
-Now you can use the example code of the OpenCR libraries by going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl".
+Now you can use the example code of the OpenCR libraries by going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl". This script allows the OpenCR to communicate with the configuration software.
 
-IMG
+![0.png](img\0.png)
 
 - Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
