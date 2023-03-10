@@ -197,6 +197,12 @@ Repeat this for each motor you have:
 
 - Apply
 
+- The last step is changing the baud rate: go to "scan" and start the procedure
+  
+  ![6.png](C:\Users\andre\Desktop\TurtlebotConveyor\img\6.png)
+
+- Change the baud rate to 1 Mbps for each motor, then apply.
+
 
 
 ## Moving the servos
