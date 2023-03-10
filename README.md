@@ -12,6 +12,8 @@ The robot can move thanks to 8 DYNAMIXEL XL430-W250-T servomotors (4 for steerin
 
 - [Assembly Instructions](#assembly-instructions)
 
+- [Servos' configuration](#servos--configuration)
+
 - [Useful Links](#useful-links)
 
 # Components
