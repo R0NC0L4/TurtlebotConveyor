@@ -161,29 +161,41 @@ Now you can use the example code of the OpenCR libraries by going to: "File" -> 
 
 <img src="img\00.png" title="" alt="00.png" data-align="center">
 
-Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/) configuration software.
+
+Repeat this for each motor you have:
 
 - Plug one motor into the OpenCR board
 
 - Open the Wizard
 
 - Click on "Recovery"
+  
+  <img title="" src="img/1.png" alt="1.png" data-align="center">
 
-- Choose the model of the motor
+- Choose the model of the motor (XL430-W250)
+  
+  <img title="" src="img/2.png" alt="2.png" data-align="center">
 
 - Choose the firmware version
 
 - Follow the procedure
+  
+  <img title="" src="img/3.png" alt="" data-align="center">
 
 - Once you're done, click on "Tools" -> "ID inspections"
 
 - Scan and follow the procedure
+  
+  <img title="" src="img/4.png" alt="4.png" data-align="center">
 
-- Click on the model and choose the ID and baud rate you want
+- Click on the model and choose the ID you want
+  
+  <img src="file:///C:/Users/andre/Desktop/TurtlebotConveyor/img/5.png" title="" alt="5.png" data-align="center">
 
 - Apply
 
-Repeat this for each motor you have.
+
 
 ## Moving the servos
 
