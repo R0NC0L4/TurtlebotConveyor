@@ -114,6 +114,54 @@ The *final* *result* of this section is the following.
 
 ![tb.jpg](img/tb.jpg)
 
+# Servos' configuration
+
+If you want to send a signal to the servo you have to assign an ID to it. We set the IDs in this way:
+
+|Servo |ID |
+|------- |------- |
+|Wheel_L_R |1 |
+|Wheel_R_R|2|
+|Wheel_L_F|3|
+|Wheel_R_F|4|
+|Joint_L_R|5|
+|Joint_R_R|6|
+|Joint_L_F|7|
+|Joint_R_F|8|
+
+The first letter after the underscore can be L = LEFT or R = RIGHT.
+
+The second letetr after the underscore can be R = REAR or F = FRONT.
+
+Another thing you have to configure is the baud rate of the servo.
+
+## Configuration's step
+
+- Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+
+- Plug one motor to the OpenCR board
+
+- Open the Wizard
+    
+- Click on "Recovery"
+    
+- Choose the model of the motor
+    
+- Choose the firmware version
+    
+- Follow the procedure
+    
+- Once you're done, click on "Tools" -> ID inspections
+    
+- Scan and follow the procedure
+    
+- Click on the model and choose the ID and baud rate(?) you want
+    
+- Apply
+    
+Repeat this for each motor you have.
+
+Now you are ready to move the servos. First of all you have to create some Daisy Chain because the OpenCR board has only three TTL port.
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
