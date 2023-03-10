@@ -36,6 +36,8 @@ Electronic components
 
 - 1 x [RC-100B](https://www.robotis.us/rc-100b/) Remote Control
 
+- 1 x [LIPO Battery 11.1V 1800mAh LB-012 ](http://en.robotis.com/shop_en/item.php?it_id=903-0210-000) and [LIPO Battery Charger LBC-010](http://en.robotis.com/shop_en/item.php?it_id=903-0144-000)
+
 Motors
 
 - 8 x [XL430-W250-T](http://en.robotis.com/shop_en/item.php?it_id=902-0135-000) Motor
@@ -205,7 +207,7 @@ Repeat this for each motor you have:
 
 ## Moving the servos
 
-First, you must create some Daisy Chain because the OpenCR board has only three TTL ports (see more [here](https://github.com/ROBOTIS-GIT/turtlebot3/issues/638)). You can connect the board and motors using Cable-X4P.
+To begin, you will need to create a Daisy Chain since the OpenCR board only has three TTL ports (you can learn more about this [here](https://github.com/ROBOTIS-GIT/turtlebot3/issues/638)). You can connect the board and motors using a Cable-X4P. Additionally, the joints and motors will need an additional power supply. Next, you can connect the Li-Po battery to the OpenCR.
 
 <img title="" src="img/chain.png" alt="chain.png" data-align="center">
 
