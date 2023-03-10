@@ -118,54 +118,76 @@ The *final* *result* of this section is the following.
 
 If you want to send a signal to the servo you have to assign an ID to it. We set the IDs in this way:
 
-|Servo |ID |
-|------- |------- |
-|Wheel_L_R |1 |
-|Wheel_R_R|2|
-|Wheel_L_F|3|
-|Wheel_R_F|4|
-|Joint_L_R|5|
-|Joint_R_R|6|
-|Joint_L_F|7|
-|Joint_R_F|8|
+| Servo     | ID  |
+| --------- | --- |
+| Wheel_L_R | 1   |
+| Wheel_R_R | 2   |
+| Wheel_L_F | 3   |
+| Wheel_R_F | 4   |
+| Joint_L_R | 5   |
+| Joint_R_R | 6   |
+| Joint_L_F | 7   |
+| Joint_R_F | 8   |
 
 The first letter after the underscore can be L = LEFT or R = RIGHT.
 
-The second letetr after the underscore can be R = REAR or F = FRONT.
+The second letter after the underscore can be R = REAR or F = FRONT.
 
-Another thing you have to configure is the baud rate of the servo.
+Another thing you have to configure is the baud rate of the servo (1 Mbps).
 
 ## Configuration's step
 
+First, you must install the Arduino IDE and the OpenCR board by following this [guide](https://emanual.robotis.com/docs/en/parts/controller/opencr10/).
+
+> Useful chapters
+> 
+> 1. Introduction
+> 
+> 2. Specifications
+> 
+> 3. Layout / Pin Map
+> 
+>    4.1 Arduino IDE - Install on linux
+> 
+> 5. Examples
+> 
+>         5.1 LED
+> 
+>         5.2 Button
+> 
+>    8.3 Communication Circuit - TTL Communication
+
+Now you can use the example code of the OpenCR libraries by going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl".
+
+IMG
+
 - Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
-- Plug one motor to the OpenCR board
+- Plug one motor into the OpenCR board
 
 - Open the Wizard
-    
-- Click on "Recovery"
-    
-- Choose the model of the motor
-    
-- Choose the firmware version
-    
-- Follow the procedure
-    
-- Once you're done, click on "Tools" -> "ID inspections"
-    
-- Scan and follow the procedure
-    
-- Click on the model and choose the ID and baud rate you want
-    
-- Apply
-    
-Repeat this for each motor you have.
 
-To complete the servos setup you have to install the [Arduino IDE and the OpenCR board.](https://emanual.robotis.com/docs/en/parts/controller/opencr10/). Now you can use the example code of the OpenCR libraries going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl".
+- Click on "Recovery"
+
+- Choose the model of the motor
+
+- Choose the firmware version
+
+- Follow the procedure
+
+- Once you're done, click on "Tools" -> "ID inspections"
+
+- Scan and follow the procedure
+
+- Click on the model and choose the ID and baud rate you want
+
+- Apply
+
+Repeat this for each motor you have.
 
 ## Moving the servos
 
-To move the servos first of all you have to create some Daisy Chain because the OpenCR board has only three TTL port. We try to move the conveyor by using another example code. You can find it in : "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allow you to use the RC100 remote control to control the robot.
+To move the servos first of all you have to create some Daisy Chain because the OpenCR board has only three TTL ports. We try to move the conveyor by using another example code. You can find it in: "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allows you to use the RC100 remote control to control the robot.
 
 # Useful Links
 
