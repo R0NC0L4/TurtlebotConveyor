@@ -161,7 +161,7 @@ Now you can use the example code of the OpenCR libraries by going to: "File" -> 
 
 ![0.png](img\0.png)
 
-- Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
 - Plug one motor into the OpenCR board
 
