@@ -191,7 +191,7 @@ Repeat this for each motor you have:
 
 - Click on the model and choose the ID you want
   
-  <img src="file:///C:/Users/andre/Desktop/TurtlebotConveyor/img/5.png" title="" alt="5.png" data-align="center">
+  <img title="" src="img/5.png" alt="5.png" data-align="center">
 
 - Apply
 
