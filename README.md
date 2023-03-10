@@ -161,9 +161,11 @@ Another thing you have to configure is the baud rate of the servo.
     
 Repeat this for each motor you have.
 
-Now you are ready to move the servos. First of all you have to create some Daisy Chain because the OpenCR board has only three TTL port.
+To complete the servos setup you have to install the [Arduino IDE and the OpenCR board.](https://emanual.robotis.com/docs/en/parts/controller/opencr10/). Now you can use the example code of the OpenCR libraries going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl".
 
-To test the servos you have to install the [Arduino IDE and the OpenCR board.](https://emanual.robotis.com/docs/en/parts/controller/opencr10/). Now you can use the examples code of the OpenCR libraries. To complete the configuration you can go in the Arduino IDE and then go to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl".
+## Moving the servos
+
+To move the servos first of all you have to create some Daisy Chain because the OpenCR board has only three TTL port. We try to move the conveyor by using another example code. You can find it in : "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allow you to use the RC100 remote control to control the robot.
 
 # Useful Links
 
