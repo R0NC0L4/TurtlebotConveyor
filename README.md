@@ -151,17 +151,20 @@ Another thing you have to configure is the baud rate of the servo.
     
 - Follow the procedure
     
-- Once you're done, click on "Tools" -> ID inspections
+- Once you're done, click on "Tools" -> "ID inspections"
     
 - Scan and follow the procedure
     
-- Click on the model and choose the ID and baud rate(?) you want
+- Click on the model and choose the ID and baud rate you want
     
 - Apply
     
 Repeat this for each motor you have.
 
 Now you are ready to move the servos. First of all you have to create some Daisy Chain because the OpenCR board has only three TTL port.
+
+To test the servos you have to install the [Arduino IDE and the OpenCR board.](https://emanual.robotis.com/docs/en/parts/controller/opencr10/). Now you can use the examples code of the OpenCR libraries. To complete the configuration you can go in the Arduino IDE and then go to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl".
+
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
