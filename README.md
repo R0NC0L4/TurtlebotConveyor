@@ -6,7 +6,7 @@ The TurtleBot3 Conveyor is a versatile mobile robot with four wheels and four jo
 
 The robot can move thanks to 8 DYNAMIXEL XL430-W250-T servomotors (4 for steering and 4 for driving) connected to an OpenCR1.0 Board. It's possible to communicate with the Arduino board in two ways: via joystick, with the RC100 remote control with BT410 master-slave Bluetooth modules, or via Raspberry Pi 4 using ROS. We're going to explain both.
 
-In this repository, you'll find all the resources you need to get up and running with the TurtleBot3 Conveyor, including software packages, code examples, and documentation. We've also included links to additional resources and tutorials that can help you expand your knowledge and skills. So whether you're new to robotics or an experienced engineer, we hope you'll find this repository to be a valuable resource for your projects and experiments.
+In this repository, you'll find all the resources you need to get up and running with the TurtleBot3 Conveyor, including software packages, code examples, and documentation. We've also included links to additional resources and tutorials that can help you expand your knowledge and skills.
 
 # Table of Contents
 
