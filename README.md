@@ -1,6 +1,6 @@
 # TurtleBot3 Conveyor
 
-The TurtleBot3 Conveyor is a versatile mobile robot with four wheels and four joints. This GitHub repository provides a comprehensive guide for setting up and moving the TurtleBot3 Conveyor, covering everything from assembling the robot to programming its movements.
+The TurtleBot3 Conveyor is a versatile mobile robot with four wheels and four joints. This GitHub repository provides a comprehensive guide for setting up and moving the Conveyor, covering everything from assembling the robot to programming its movements.
 
 <img title="" src="img/tb.jpg" alt="tb.jpg" data-align="center" width="484">
 
