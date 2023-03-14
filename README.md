@@ -243,16 +243,19 @@ This code makes it possible to turn a motor on or off by sending a message to th
 These are the steps we followed:
 
 1. Upload the code into the Arduino board
-2. Open a terminal window and start the score
+
+2. Open a terminal window and start the roscore
    
    ```
    roscore
    ```
+
 3. Open another terminal and launch the script that allows communication
    
    ```
    rosrun rosserial_python serial_node.py /dev/ttyACM0
    ```
+
 4. Send data to the Arduino (open another terminal window)
    
    4.1 Turn on the motor
@@ -279,7 +282,7 @@ These are the steps we followed:
 
 1. Upload the code into the Arduino board
 
-2. Open a terminal window and start the score
+2. Open a terminal window and start the roscore
    
    ```
    roscore
@@ -305,7 +308,7 @@ These are the steps we followed:
 
 1. Upload the code into the Arduino board
 
-2. Open a terminal window and start the score
+2. Open a terminal window and start the roscore
    
    ```
    roscore
