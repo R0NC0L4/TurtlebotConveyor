@@ -253,7 +253,7 @@ These are the steps we followed:
    ```
    rosrun rosserial_python serial_node.py /dev/ttyACM0
    ```
-4. Send data to the Arduino
+4. Send data to the Arduino (open another terminal window)
    
    4.1 Turn on the motor
    
