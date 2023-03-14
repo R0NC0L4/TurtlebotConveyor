@@ -295,7 +295,41 @@ These are the steps we followed:
 
 <img title="" src="img/mimic.gif" alt="mimic.gif" data-align="center">
 
+## Communication Interface
 
+The script we wrote is contained in TurtlebotConveyor-main\Arduino_code\CommunicationInterface.
+
+This code provides a communication interface between ROS and Arduino: it enables the OpenCR board to receive position/velocity commands by reading from topics, and then it sets the commands to the motors accordingly.
+
+These are the steps we followed:
+
+1. Upload the code into the Arduino board
+
+2. Open a terminal window and start the score
+   
+   ```
+   roscore
+   ```
+
+3. Open another terminal and launch the script that allows communication
+   
+   ```
+   rosrun rosserial_python serial_node.py /dev/ttyACM0
+   ```
+
+4. Send data to the Arduino (open another terminal window)
+   
+   4.1 Set motor velocity (left rear wheel)
+   
+   ```
+   rostopic pub wheel_lr std_msgs/Float32 "data 100.0"
+   ```
+   
+   4.2 Set joint position (left rear wheel)
+   
+   ```
+   rostopic pub joint_lr std_msgs/Float32 "data 180.0"
+   ```
 
 # Useful Links
 
