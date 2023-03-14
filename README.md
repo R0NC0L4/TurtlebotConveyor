@@ -273,7 +273,29 @@ These are the steps we followed:
 
 The script we wrote is contained in TurtlebotConveyor-main\Arduino_code\ReadWriteWheels.
 
-In this case, the second wheel is designed as a mimic of the first wheel, copying its movements precisely.
+In this case, the second wheel is designed as a mimic of the first wheel, copying its movements precisely. We have defined a topic named 'wheel' where the first wheel (we can move manually) publishes its current state, and the second wheel reads the state information and sets itself to the position it reads.
+
+These are the steps we followed:
+
+1. Upload the code into the Arduino board
+
+2. Open a terminal window and start the score
+   
+   ```
+   roscore
+   ```
+
+3. Open another terminal and launch the script that allows communication
+   
+   ```
+   rosrun rosserial_python serial_node.py /dev/ttyACM0
+   ```
+
+4. Move the wheel manually
+
+<img title="" src="img/mimic.gif" alt="mimic.gif" data-align="center">
+
+
 
 # Useful Links
 
