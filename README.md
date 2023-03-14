@@ -122,7 +122,7 @@ The *final* *result* of this section is the following.
 
 # Servos' configuration
 
-If you want to send a signal to the servo you have to assign an ID to it. We set the IDs in this way:
+In order to send a signal to the servo we have to assign an ID to it. We set the IDs in this way:
 
 | Servo     | ID  |
 | --------- | --- |
@@ -139,11 +139,11 @@ The first letter after the underscore can be L = LEFT or R = RIGHT.
 
 The second letter after the underscore can be R = REAR or F = FRONT.
 
-Another thing you have to configure is the baud rate of the servo (1 Mbps).
+Another thing we have to configure is the baud rate of the servo (1 Mbps).
 
 ## Configuration's step
 
-First, you must install the Arduino IDE and the OpenCR board by following this [guide](https://emanual.robotis.com/docs/en/parts/controller/opencr10/).
+First, install the Arduino IDE and the OpenCR board by following this [guide](https://emanual.robotis.com/docs/en/parts/controller/opencr10/).
 
 > Useful chapters
 > 
@@ -163,13 +163,13 @@ First, you must install the Arduino IDE and the OpenCR board by following this [
 > 
 >    8.3 Communication Circuit - TTL Communication
 
-Now you can use the example code of the OpenCR libraries by going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl". This script allows the OpenCR to communicate with the configuration software.
+Now it's possible to use the example code of the OpenCR libraries by going to: "File" -> "Examples" -> "OpenCR" -> "Etc" -> "usb_to_dxl". This script allows the OpenCR to communicate with the configuration software.
 
 <img src="img\00.png" title="" alt="00.png" data-align="center">
 
 Install [Dynamixel Wizard 2.0](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/) configuration software.
 
-Repeat this for each motor you have:
+We'll repeat this for each motor  we have:
 
 - Plug one motor into the OpenCR board
 
@@ -189,13 +189,13 @@ Repeat this for each motor you have:
   
   <img title="" src="img/3.png" alt="" data-align="center">
 
-- Once you're done, click on "Tools" -> "ID inspections"
+- Once we're done, click on "Tools" -> "ID inspections"
 
 - Scan and follow the procedure
   
   <img title="" src="img/4.png" alt="4.png" data-align="center">
 
-- Click on the model and choose the ID you want
+- Click on the model and choose the desired ID
   
   <img title="" src="img/5.png" alt="5.png" data-align="center">
 
@@ -209,13 +209,13 @@ Repeat this for each motor you have:
 
 ## Moving the servos
 
-To begin, you will need to create a Daisy Chain since the OpenCR board only has three TTL ports (you can learn more about this [here](https://github.com/ROBOTIS-GIT/turtlebot3/issues/638)). You can connect the board and motors using a Cable-X4P. Additionally, the joints and motors will need an additional power supply. Next, you can connect the Li-Po battery to the OpenCR.
+To begin, we will need to create a Daisy Chain since the OpenCR board only has three TTL ports (you can learn more about this [here](https://github.com/ROBOTIS-GIT/turtlebot3/issues/638)). We connected the board and motors using a Cable-X4P. Additionally, the joints and motors will need an additional power supply. Next, connect the Li-Po battery to the OpenCR.
 
 <img title="" src="img/chain.png" alt="chain.png" data-align="center">
 
 Connect the RC-100B to the OpenCR plugging the BT-410 master into the controller and the slave into the Arduino board (further information [here](https://emanual.robotis.com/docs/en/parts/communication/rc-100/)).
 
-Then try to move the conveyor by using another example code. You can find it in: "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allows you to use the RC100 remote control to control the robot.
+Then try to move the conveyor by using another example code. It's in: "File" -> "Examples" -> "Turtlebot3" -> "turtlebot3_friends" -> "turtlebot_conveyor". This code allows to use the RC100 remote control to control the robot.
 
 <img title="" src="img/moving.gif" alt="moving.gif" data-align="center">
 
