@@ -223,12 +223,27 @@ Then try to move the conveyor by using another example code. It's in: "File" -> 
 
 # Control Arduino with ROS
 
+First, we have to install the rosserial_arduino library for ROS to communicate with the Arduino board. You can find installation instructions in this [guide](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup).
 
+> Reccomended chapters
+> 
+>    2.1.1 Installing Binaries on the ROS workstation
+> 
+>    2.2    Install ros_lib into the Arduino Environment
 
+Next, we need to install the Dynamixel2Arduino library, which can be done by following this [guide](https://emanual.robotis.com/docs/en/software/arduino_ide/) (see chapter 2.1).
 
+Once we have installed these parts we are ready to start. This repo contains some Arduino scripts we wrote that allow communication between ROS and Arduino.
+
+## Moving a wheel
+
+The first script we wrote is contained in TurtlebotConveyor-main\Arduino_code\OneWheel. 
+This code makes it possible to turn a motor on or off by sending a message to the 'wheel' topic.
 
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
 
 - [CAD Conveyor](https://cad.onshape.com/documents/6b16c8df8fc6bb6bcc2182d1/w/2295d0172d536987004f39cd/e/9a71164f03fa8f0764afc11f)
+
+- [rosserial_arduino tutorials](http://wiki.ros.org/rosserial_arduino/Tutorials)
