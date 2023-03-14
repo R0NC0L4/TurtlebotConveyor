@@ -16,7 +16,7 @@ In this repository, you'll find all the resources you need to get up and running
 
 - [Servos' configuration](#servos-configuration)
 
-- [Control Arduino with ROS](#control_arduino_with_ros)
+- [Control Arduino with ROS](#control-arduino-with-ros)
 
 - [Useful Links](#useful-links)
 
