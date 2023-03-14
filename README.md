@@ -269,7 +269,11 @@ These are the steps we followed:
 
 <img title="" src="img/OneWheel.gif" alt="OneWheel.gif" data-align="left">
 
+## Twin wheels
 
+The script we wrote is contained in TurtlebotConveyor-main\Arduino_code\ReadWriteWheels.
+
+In this case, the second wheel is designed as a mimic of the first wheel, copying its movements precisely.
 
 # Useful Links
 
