@@ -240,6 +240,33 @@ Once we have installed these parts we are ready to start. This repo contains som
 The first script we wrote is contained in TurtlebotConveyor-main\Arduino_code\OneWheel. 
 This code makes it possible to turn a motor on or off by sending a message to the 'wheel' topic.
 
+These are the steps we followed:
+
+1. Upload the code into the Arduino board
+2. Open a terminal window and start the score
+   
+   ```
+   roscore
+   ```
+3. Open another terminal and launch the script that allows communication
+   
+   ```
+   rosrun rosserial_python serial_node.py /dev/ttyACM0
+   ```
+4. Send data to the Arduino
+   
+   4.1 Turn on the motor
+   
+   ```
+   rostopic pub wheel std_msgs/Float32 "data 1.0"
+   ```
+   
+   4.2 Turn off the motor
+   
+   ```
+   rostopic pub wheel std_msgs/Float32 "data 0.0"
+   ```
+
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
