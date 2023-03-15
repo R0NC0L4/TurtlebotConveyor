@@ -336,7 +336,10 @@ These are the steps we followed:
 
 
 -[creazione msgs ros](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
+
 -[creazione .h a partire da un msgs](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup#A.28RECOMMENDED.29_Installing_Binaries_on_the_ROS_workstation)
+
+Ora includi nello script di arduino la libreria ros.h e la libreria del custom message creata prima.
 
 Per far compilare lo script sostituisci il contenuto di ArduinoHardware.h con il contenuto di questo [link](https://github.com/ROBOTIS-GIT/OpenCR/blob/master/arduino/opencr_arduino/opencr/libraries/turtlebot3_ros_lib/ArduinoHardware.h)
 # Useful Links
