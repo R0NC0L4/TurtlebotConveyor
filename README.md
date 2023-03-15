@@ -336,7 +336,7 @@ These are the steps we followed:
 
 
 -[creazione msgs ros](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
--[creazione .h a partire da un msgs] (http://wiki.ros.org/rosserial_client/Tutorials/Generating%20Message%20Header%20Files)
+-[creazione .h a partire da un msgs](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup#A.28RECOMMENDED.29_Installing_Binaries_on_the_ROS_workstation)
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
