@@ -253,7 +253,7 @@ These are the steps we followed:
 3. Open another terminal and launch the script that allows communication
    
    ```
-   rosrun rosserial_python serial_node.py /dev/ttyACM0
+   rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
    ```
 
 4. Send data to the Arduino (open another terminal window)
@@ -291,7 +291,7 @@ These are the steps we followed:
 3. Open another terminal and launch the script that allows communication
    
    ```
-   rosrun rosserial_python serial_node.py /dev/ttyACM0
+   rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
    ```
 
 4. Move the wheel manually
