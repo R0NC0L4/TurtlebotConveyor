@@ -334,7 +334,6 @@ These are the steps we followed:
    rostopic pub joint_lr std_msgs/Float32 "data:=180.0"
    ```
 
-
 -[creazione msgs ros](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
 
 -[creazione .h a partire da un msgs](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup#A.28RECOMMENDED.29_Installing_Binaries_on_the_ROS_workstation)
@@ -342,6 +341,13 @@ These are the steps we followed:
 Ora includi nello script di arduino la libreria ros.h e la libreria del custom message creata prima.
 
 Per far compilare lo script sostituisci il contenuto di ArduinoHardware.h con il contenuto di questo [link](https://github.com/ROBOTIS-GIT/OpenCR/blob/master/arduino/opencr_arduino/opencr/libraries/turtlebot3_ros_lib/ArduinoHardware.h)
+
+
+
+Per far partire comandi da tastiera è
+
+rosrun conveyor_description_pkg keyboard 
+
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
