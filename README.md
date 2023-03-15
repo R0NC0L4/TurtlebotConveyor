@@ -317,12 +317,10 @@ These are the steps we followed:
 3. Open another terminal and launch the script that allows communication
    
    ```
-   rosrun rosserial_python serial_node.py /dev/ttyACM0
+   rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000Send data to the Arduino (open another terminal window)
    ```
 
-4. Send data to the Arduino (open another terminal window)
-   
-   4.1 Set motor velocity (left rear wheel)
+4. 4.1 Set motor velocity (left rear wheel)
    
    ```
    rostopic pub wheel_lr std_msgs/Float32 "data 100.0"
