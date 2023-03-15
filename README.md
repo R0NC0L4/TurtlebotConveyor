@@ -334,6 +334,9 @@ These are the steps we followed:
    rostopic pub joint_lr std_msgs/Float32 "data 180.0"
    ```
 
+
+-[creazione msgs ros](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
+-[creazione .h a partire da un msgs] (http://wiki.ros.org/rosserial_client/Tutorials/Generating%20Message%20Header%20Files)
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
