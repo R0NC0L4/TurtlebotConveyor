@@ -261,13 +261,13 @@ These are the steps we followed:
    4.1 Turn on the motor
    
    ```
-   rostopic pub wheel std_msgs/Float32 "data 1.0"
+   rostopic pub wheel std_msgs/Float32 "data:=1.0"
    ```
    
    4.2 Turn off the motor
    
    ```
-   rostopic pub wheel std_msgs/Float32 "data 0.0"
+   rostopic pub wheel std_msgs/Float32 "data:=0.0"
    ```
 
 <img title="" src="img/OneWheel.gif" alt="OneWheel.gif" data-align="left">
@@ -325,13 +325,13 @@ These are the steps we followed:
    4.1 Set motor velocity (left rear wheel)
    
    ```
-   rostopic pub wheel_lr std_msgs/Float32 "data 100.0"
+   rostopic pub wheel_lr std_msgs/Float32 "data:=100.0"
    ```
    
    4.2 Set joint position (left rear wheel)
    
    ```
-   rostopic pub joint_lr std_msgs/Float32 "data 180.0"
+   rostopic pub joint_lr std_msgs/Float32 "data:=180.0"
    ```
 
 
