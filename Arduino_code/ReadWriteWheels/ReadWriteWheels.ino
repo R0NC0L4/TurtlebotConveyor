@@ -73,7 +73,7 @@ void setup()
 
   // Turn off torque when configuring items in EEPROM area
   dxl.torqueOff(DXL_ID_talker);
-  dxl.setOperatingMode(DXL_ID_talker, OP_PWM);
+  dxl.setOperatingMode(DXL_ID_talker, OP_CURRENT_BASED_POSITION);
   dxl.torqueOn(DXL_ID_talker);
   
   dxl.torqueOff(DXL_ID_listener);
@@ -98,5 +98,5 @@ void loop()
   Serial.println(deg_msg.data);
   
   nh.spinOnce();
-  delay(1);
+  delay(10);
 }
