@@ -395,6 +395,8 @@ The keys are:
 
 This is the result:
 
+<img title="" src="img/keyboard.gif" alt="keyboard.gif" data-align="center">
+
 
 
 # Useful Links
