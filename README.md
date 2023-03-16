@@ -18,6 +18,8 @@ In this repository, you'll find all the resources you need to get up and running
 
 - [Control Arduino with ROS](#control-arduino-with-ros)
 
+- [Moving the Robot using ROS](#moving-the-robot-using-ros)
+
 - [Useful Links](#useful-links)
 
 # Components
@@ -334,7 +336,7 @@ These are the steps we followed:
    rostopic pub joint_lr std_msgs/Float32 "data:=180.0"
    ```
 
-## Communication interface using custom messages
+## Communication Interface using Custom Messages
 
 The previous Arduino script was too onerous to use: we have defined a topic for each motor. The idea of the present code is to use only one ROS topic by using custom ROS messages.
 
@@ -353,6 +355,8 @@ This code will be used for further communications.
 ```
 rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
 ```
+
+# Moving the Robot using ROS
 
 
 
