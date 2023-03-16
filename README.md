@@ -358,9 +358,44 @@ rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
 
 # Moving the Robot using ROS
 
+This part contains some scripts used to control the robot's movement. All these files are contained in TurtlebotConveyor/conveyor_description_pkg/scripts.
+
+## Using keyboard
+
+This code aims to control the robot's movements by using the keyboard.
+
+We have defined three joint configurations to make the robot move forward-backward, rightward-leftward, and rotate.
+
+These are the steps to run the script:
+
+1. Open a terminal window and start the roscore
+   
+   ```
+   roscore
+   ```
+2. Open another terminal and launch the script that allows communication
+   
+   ```
+   rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
+   ```
+3. Open another terminal and run the keyboard script
+   
+   ```
+   rosrun conveyor_description_pkg keyboard
+   ```
+
+The keys are:
+
+- a: configuration forward/backward
+- s: configuration rightward/leftward
+- d: rotation
+- w: forward/rightward
+- q: backward/leftward
+- e: stop
+
+This is the result:
 
 
-rosrun conveyor_description_pkg keyboard 
 
 # Useful Links
 
