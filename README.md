@@ -334,17 +334,27 @@ These are the steps we followed:
    rostopic pub joint_lr std_msgs/Float32 "data:=180.0"
    ```
 
--[creazione msgs ros](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)
+## Communication interface using custom messages
 
--[creazione .h a partire da un msgs](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup#A.28RECOMMENDED.29_Installing_Binaries_on_the_ROS_workstation)
+The previous Arduino script was too onerous to use: we have defined a topic for each motor. The idea of the present code is to use only one ROS topic by using custom ROS messages.
 
-Ora includi nello script di arduino la libreria ros.h e la libreria del custom message creata prima.
+These are the steps we followed:
 
-Per far compilare lo script sostituisci il contenuto di ArduinoHardware.h con il contenuto di questo [link](https://github.com/ROBOTIS-GIT/OpenCR/blob/master/arduino/opencr_arduino/opencr/libraries/turtlebot3_ros_lib/ArduinoHardware.h)
+1. We defined a custom ROS message named *conveyor_state* (see this [guide](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_msg)). This file contains information about the desired configuration (position and velocity) the robot must maintain. It's in TurtlebotConveyor\conveyor_description_pkg\msg.
+2. We created the *conveyor_state.h* by following this [guide](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup#A.28RECOMMENDED.29_Installing_Binaries_on_the_ROS_workstation) (see chapter 2.2).
+3. *To make the OpenCR board compile the script, we replace the* ArduinoHardware.h file with [this one](https://github.com/ROBOTIS-GIT/OpenCR/blob/master/arduino/opencr_arduino/opencr/libraries/turtlebot3_ros_lib/ArduinoHardware.h) (this [link](https://github.com/ROBOTIS-GIT/OpenCR/issues/120) is for further information).
+
+We are now ready to upload our new file to Arduino. It's contained in TurtlebotConveyor-main\Arduino_code\CommunicationInterface\CommunicationInterfaceCustom.
+
+This code will be used for further communications.
+
+ It is necessary to run this command after starting the roscore to ensure communication between ROS and Arduino:
+
+```
+rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
+```
 
 
-
-Per far partire comandi da tastiera è
 
 rosrun conveyor_description_pkg keyboard 
 
