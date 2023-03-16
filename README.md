@@ -397,7 +397,34 @@ This is the result:
 
 <img title="" src="img/keyboard.gif" alt="keyboard.gif" data-align="center">
 
+## Using gamepad
 
+This code allows the Logitech F710 Wireless Gamepad to control the robot's movements. 
+
+We modified the [Logitech F710 ROS repository](https://github.com/husarion/logitech_f710_ros/tree/ros1/logitech_f710_ros) to fit our specific use case. The modified code enables the gamepad to send button information via a ROS topic.
+
+To control the robot's movements, we wrote a script that reads from the topic and sends the desired configuration to the robot. The script is contained in TurtlebotConveyor/conveyor_description_pkg/scripts and is named *joystick.cpp*.
+
+To use the gamepad to control the robot, follow these steps:
+
+1. Connect the Logitech F710 Wireless Gamepad to the computer
+2. Open a terminal window and use this launch file
+   
+   ```
+   roslaunch logitech_f710_joy_rosjoy_teleop.launch
+   ```
+3. Open another terminal and launch the script that allows communication
+   
+   ```
+   rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
+   ```
+4. Open another terminal and run the gamepad script
+   
+   ```
+   rosrun conveyor_description_pkg joystick
+   ```
+
+ToDo
 
 # Useful Links
 
