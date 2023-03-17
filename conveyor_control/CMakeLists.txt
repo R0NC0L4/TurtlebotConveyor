@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
+  conveyor_description_pkg
 )
 
 ## System dependencies are found with CMake's conventions
@@ -141,6 +142,9 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/conveyor_control_node.cpp)
 add_executable(prova scripts/prova.cpp)
 target_link_libraries(prova ${catkin_LIBRARIES})
+
+add_executable(control2gazebo scripts/control2gazebo.cpp)
+target_link_libraries(control2gazebo ${catkin_LIBRARIES})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
