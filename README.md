@@ -418,7 +418,7 @@ rosrun conveyor_description_pkg keyboard
 Finally, run the script that sends the desired commands to the simulation:
 
 ```
-rosrun conveyor_control keyboard control2gazebo
+rosrun conveyor_control control2gazebo
 ```
 
 ## Using gamepad
