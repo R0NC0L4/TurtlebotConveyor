@@ -373,11 +373,13 @@ These are the steps to run the script:
    ```
    roscore
    ```
+
 2. Open another terminal and launch the script that allows communication
    
    ```
    rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
    ```
+
 3. Open another terminal and run the keyboard script
    
    ```
@@ -397,6 +399,28 @@ This is the result:
 
 <img title="" src="img/keyboard.gif" alt="keyboard.gif" data-align="center">
 
+## See the script on Gazebo
+
+It's also possible to run those scripts on Gazebo. Packages conveyor_control and conveyor_description_pkg contain all needed to simulate the robot.
+
+To start the simulation, we have to use this command on the terminal:
+
+```
+roslaunch conveyor_description_pkg view_conveyor_gazebo_control.launch
+```
+
+Next, start the desired script on another terminal window:
+
+```
+rosrun conveyor_description_pkg keyboard
+```
+
+Finally, run the script that sends the desired commands to the simulation:
+
+```
+rosrun conveyor_control keyboard control2gazebo
+```
+
 ## Using gamepad
 
 This code allows the Logitech F710 Wireless Gamepad to control the robot's movements. 
@@ -408,16 +432,19 @@ To control the robot's movements, we wrote a script that reads from the topic an
 To use the gamepad to control the robot, follow these steps:
 
 1. Connect the Logitech F710 Wireless Gamepad to the computer
+
 2. Open a terminal window and use this launch file
    
    ```
    roslaunch logitech_f710_joy_rosjoy_teleop.launch
    ```
+
 3. Open another terminal and launch the script that allows communication
    
    ```
    rosrun rosserial_python serial_node.py /dev/ttyACM0 _baud:=1000000
    ```
+
 4. Open another terminal and run the gamepad script
    
    ```
