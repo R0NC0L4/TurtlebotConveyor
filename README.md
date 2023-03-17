@@ -399,7 +399,7 @@ This is the result:
 
 <img title="" src="img/keyboard.gif" alt="keyboard.gif" data-align="center">
 
-## See the script on Gazebo
+## Using the script on Gazebo
 
 It's also possible to run those scripts on Gazebo. Packages conveyor_control and conveyor_description_pkg contain all needed to simulate the robot.
 
