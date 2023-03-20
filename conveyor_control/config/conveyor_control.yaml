@@ -43,8 +43,8 @@ conveyor:
   joint_limits:
     servo_front_right_joint:
       has_position_limits: true
-      min_position: -0.785
-      max_position: 0.785
+      # min_position: -0.785
+      # max_position: 0.785
       has_velocity_limits: true
       max_velocity: 2.0
       has_acceleration_limits: true

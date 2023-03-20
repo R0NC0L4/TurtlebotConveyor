@@ -4,6 +4,7 @@ project(logitech_f710_joy_ros)
 find_package(catkin REQUIRED COMPONENTS
   joy
   roscpp
+  conveyor_description_pkg
 )
 
 

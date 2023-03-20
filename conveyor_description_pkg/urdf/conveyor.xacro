@@ -101,7 +101,7 @@
             <origin xyz="${axisX * base_length/2}  ${axisY *base_length/2} 0" rpy="0 0 ${angle}" />
 
             <axis xyz="0 0 1" />
-            <limit effort="100" velocity="100" lower="${-M_PI/4}" upper="${M_PI/4}" />
+            <limit effort="100" velocity="100" lower="${-2*M_PI}" upper="${2*M_PI}" />
             <dynamics damping="0" friction="0" />
         </joint>
 
@@ -180,7 +180,7 @@
 
 
     <!-- Wheel 1 -->
-    <xacro:servo front="front" right="right" parent="base_link" axisX="1" axisY="1" angle="${-M_PI/4}"/>
+    <xacro:servo front="front" right="right" parent="base_link" axisX="1" axisY="1" angle="${-M_PI/4}"/> <!-- ${3*M_PI/4} -->
     <xacro:wheel fb="front" lr="right" parent="servo_front_right_link" translateX="0" translateY="0" translateZ="${-base_height-0.005}" flipY="1" flipX="0" />
     <!-- Wheel 2 -->
     <xacro:servo front="front" right="left" parent="base_link" axisX="1" axisY="-1" angle="${5*M_PI/4}" />
