@@ -436,7 +436,7 @@ To use the gamepad to control the robot, follow these steps:
 2. Open a terminal window and use this launch file
    
    ```
-   roslaunch logitech_f710_joy_rosjoy_teleop.launch
+   roslaunch logitech_f710_joy_ros joy_teleop.launch
    ```
 
 3. Open another terminal and launch the script that allows communication
