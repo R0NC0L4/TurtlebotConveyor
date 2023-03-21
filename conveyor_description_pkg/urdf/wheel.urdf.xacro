@@ -45,6 +45,7 @@
       <kp value="10000000.0" />
       <kd value="1.0" />
       <fdir1 value="1 0 0" /> -->
+      <selfCollide>false</selfCollide>
       <surface>
         <friction>
           <ode>
@@ -87,10 +88,10 @@
     <transmission name="${fb}_${lr}_wheel_joint_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${fb}_${lr}_wheel_joint">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
       </joint>
       <actuator name="${fb}_${lr}_wheel_joint_motor">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>

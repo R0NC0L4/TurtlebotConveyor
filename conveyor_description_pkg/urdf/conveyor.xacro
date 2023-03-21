@@ -8,7 +8,7 @@
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/conveyor</robotNamespace>
-            <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </plugin>
     </gazebo>
 
@@ -106,6 +106,7 @@
         </joint>
 
         <gazebo reference="servo_${front}_${right}_link">
+            <selfCollide>false</selfCollide>
             <turnGravityOff>false</turnGravityOff>
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
@@ -180,17 +181,17 @@
 
 
     <!-- Wheel 1 -->
-    <xacro:servo front="front" right="right" parent="base_link" axisX="1" axisY="1" angle="${-M_PI/4}"/> <!-- ${3*M_PI/4} -->
-    <xacro:wheel fb="front" lr="right" parent="servo_front_right_link" translateX="0" translateY="0" translateZ="${-base_height-0.005}" flipY="1" flipX="0" />
+    <xacro:servo front="front" right="right" parent="base_link" axisX="1" axisY="1" angle="${3*M_PI/4}"/> <!-- ${-M_PI/4} -->
+    <xacro:wheel fb="front" lr="right" parent="servo_front_right_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="0" />
     <!-- Wheel 2 -->
-    <xacro:servo front="front" right="left" parent="base_link" axisX="1" axisY="-1" angle="${5*M_PI/4}" />
-    <xacro:wheel fb="front" lr="left" parent="servo_front_left_link" translateX="0" translateY="0" translateZ="${-base_height-0.005}" flipY="1" flipX="1" />
+    <xacro:servo front="front" right="left" parent="base_link" axisX="1" axisY="-1" angle="${M_PI/4}" /> <!-- ${5*M_PI/4} -->
+    <xacro:wheel fb="front" lr="left" parent="servo_front_left_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="1" />
     <!-- Wheel 3 -->
-    <xacro:servo front="back" right="right" parent="base_link" axisX="-1" axisY="1" angle="${M_PI/4}" />
-    <xacro:wheel fb="back" lr="right" parent="servo_back_right_link" translateX="0" translateY="0" translateZ="${-base_height-0.005}" flipY="1" flipX="0" />
+    <xacro:servo front="back" right="right" parent="base_link" axisX="-1" axisY="1" angle="${5*M_PI/4}" /> <!-- ${M_PI/4} -->
+    <xacro:wheel fb="back" lr="right" parent="servo_back_right_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="0" />
     <!-- Wheel 4 -->
-    <xacro:servo front="back" right="left" parent="base_link" axisX="-1" axisY="-1" angle="${3*M_PI/4}" />
-    <xacro:wheel fb="back" lr="left" parent="servo_back_left_link" translateX="0" translateY="0" translateZ="${-base_height-0.005}" flipY="1" flipX="1" />
+    <xacro:servo front="back" right="left" parent="base_link" axisX="-1" axisY="-1" angle="${-M_PI/4}" /> <!-- ${3*M_PI/4} -->
+    <xacro:wheel fb="back" lr="left" parent="servo_back_left_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="1" />
 
     <!-- laser -->
 

@@ -36,10 +36,10 @@ void subCallback(const conveyor_description_pkg::conveyor_state state)
   wheel_lf.data = -state.wheel_lf/10;
   wheel_rf.data = state.wheel_rf/10;
 
-  joint_lr.data = -(state.joint_lr-180)*pi/180;
-  joint_rr.data = -(state.joint_rr-180)*pi/180;
-  joint_lf.data = -(state.joint_lf-180)*pi/180;
-  joint_rf.data = -(state.joint_rf-180)*pi/180;
+  joint_lr.data = -(state.joint_lr)*pi/180;
+  joint_rr.data = -(state.joint_rr)*pi/180;
+  joint_lf.data = -(state.joint_lf)*pi/180;
+  joint_rf.data = -(state.joint_rf)*pi/180;
 
   // Publish the message.
   pub_bl_w.publish(wheel_lr);
