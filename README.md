@@ -458,6 +458,8 @@ The keys are:
 
 This is the result:
 
+<img title="" src="img/gamepad.gif" alt="gamepad.gif" data-align="center">
+
 
 
 # Useful Links
