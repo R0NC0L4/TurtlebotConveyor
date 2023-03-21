@@ -150,6 +150,9 @@ target_link_libraries(keyboard ${catkin_LIBRARIES})
 add_executable(joystick scripts/joystick.cpp)
 target_link_libraries(joystick ${catkin_LIBRARIES})
 
+add_executable(arduino2rviz scripts/arduino2rviz.cpp)
+target_link_libraries(arduino2rviz ${catkin_LIBRARIES})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

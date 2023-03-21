@@ -17,7 +17,7 @@
       izz="${m*r*r/2}" />
   </xacro:macro>
 
-  <xacro:macro name="wheel" params="fb lr parent translateX translateY translateZ flipY flipX">
+  <xacro:macro name="wheel" params="fb lr parent translateX translateY translateZ flipY flipX rot">
     <!--fb : front, back ; lr: left, right -->
     <link name="${fb}_${lr}_wheel">
       <visual>
@@ -79,7 +79,7 @@
       <parent link="${parent}" />
       <child link="${fb}_${lr}_wheel" />
       <origin xyz="${translateX} ${translateY} ${translateZ}" rpy="0 0 ${flipX*M_PI}" />
-      <axis xyz="0 1 0" rpy="0  0" />
+      <axis xyz="0 ${rot} 0" rpy="0  0" />
       <limit effort="100" velocity="100" />
       <joint_properties damping="0.0" friction="0.0" />
     </joint>

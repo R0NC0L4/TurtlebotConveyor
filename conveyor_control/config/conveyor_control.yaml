@@ -26,25 +26,25 @@ conveyor:
   front_right_wheel_velocity_controller:
     type: velocity_controllers/JointVelocityController
     joint: front_right_wheel_joint
-    # pid: {p: 1000.0, i: 1.0, d: 0.01}
+    pid: {p: 1000.0, i: 1.0, d: 0.01}
   front_left_wheel_velocity_controller:
     type: velocity_controllers/JointVelocityController
     joint: front_left_wheel_joint
-    # pid: {p: 1000.0, i: 1.0, d: 0.01}
+    pid: {p: 1000.0, i: 1.0, d: 0.01}
   back_right_wheel_velocity_controller:
     type: velocity_controllers/JointVelocityController
     joint: back_right_wheel_joint
-    # pid: {p: 1000.0, i: 1.0, d: 0.01}
+    pid: {p: 1000.0, i: 1.0, d: 0.01}
   back_left_wheel_velocity_controller:
     type: velocity_controllers/JointVelocityController
     joint: back_left_wheel_joint
-    # pid: {p: 1000.0, i: 1.0, d: 0.01}
+    pid: {p: 1000.0, i: 1.0, d: 0.01}
 
-  gazebo_ros_control/pid_gains:
-    front_right_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
-    front_left_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
-    back_right_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
-    back_left_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
+  # gazebo_ros_control/pid_gains:
+  #   front_right_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
+  #   front_left_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
+  #   back_right_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
+  #   back_left_wheel_joint: { p: 1.0, i: 0.0, d: 1.0 }
 
   joint_limits:
     servo_front_right_joint:
