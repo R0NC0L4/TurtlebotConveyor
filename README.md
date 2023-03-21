@@ -451,7 +451,14 @@ To use the gamepad to control the robot, follow these steps:
    rosrun conveyor_description_pkg joystick
    ```
 
-ToDo
+The keys are:
+
+- right stick: choose direction
+- rb button: move forward
+
+This is the result:
+
+
 
 # Useful Links
 
