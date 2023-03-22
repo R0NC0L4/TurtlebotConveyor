@@ -1,17 +1,22 @@
 <launch>
-    <arg name="model" />
-    
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find  conveyor_description_pkg)/urdf/conveyor.xacro" />
-    <param name="use_gui" value="true"/>
+  <arg name="model" />
 
-    <node name="arduino2rviz" pkg="conveyor_description_pkg" type="arduino2rviz" />
-    <node name="serial_node" pkg="rosserial_python" type="serial_node.py">
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder $(find  conveyor_description_pkg)/urdf/conveyor.xacro" />
+  <param name="use_gui" value="true" />
+
+  <node name="arduino2rviz" pkg="conveyor_description_pkg" type="arduino2rviz" />
+  <node name="serial_node" pkg="rosserial_python" type="serial_node.py">
       <param name="port" type="string" value="/dev/ttyACM0" />
       <param name="baud" type="int" value="1000000" />
     </node>
-  
-    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find conveyor_description_pkg)/urdf/conveyor.rviz" required="true" />
-  
-  </launch>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="joint_state_publisher" type="joint_state_publisher" pkg="joint_state_publisher" output="screen">
+    <rosparam param="source_list">[to_joint_states]</rosparam>
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz"
+    args="-d $(find conveyor_description_pkg)/urdf/conveyor.rviz" required="true" />
+
+</launch>

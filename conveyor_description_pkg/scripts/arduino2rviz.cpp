@@ -12,14 +12,21 @@ ros::Publisher pub;
 
 void subCallback(const conveyor_description_pkg::conveyor_state state)
 {
-
-  //  DEVI CREARE UN PACCHETTO PER IL JOINT STATES
   float pi = 3.14159265359;
 
-  sensor_msgs::JointState joint_msg;
-  // joint_msg.name[0] = "coxa_joint_r1";
-  // joint_msg.position[0] = q_out(0);
-  // joint_msg_pub.publish(joint_msg);
+  sensor_msgs::JointState msg;
+
+  msg.header.frame_id = ""; // Empty frame ID
+  msg.name.resize(8);       // A 8 unit size vector
+  msg.position.resize(8);   // A 8 unit size vector
+  msg.name = {"servo_front_left_joint",
+              "front_left_wheel_joint",
+              "servo_front_right_joint",
+              "front_right_wheel_joint",
+              "servo_back_left_joint",
+              "back_left_wheel_joint",
+              "servo_back_right_joint",
+              "back_right_wheel_joint"};
 
   float wheel_lr = state.wheel_lr * pi / 180;
   float wheel_rr = state.wheel_rr * pi / 180;
@@ -29,17 +36,15 @@ void subCallback(const conveyor_description_pkg::conveyor_state state)
   float joint_rr = state.joint_rr * pi / 180;
   float joint_lf = state.joint_lf * pi / 180;
   float joint_rf = state.joint_rf * pi / 180;
+  float pos[] = {joint_lf, wheel_lf, joint_rf, wheel_rf, joint_lr, wheel_lr, joint_rr, wheel_rr};
 
-  float pos[] = {wheel_lr, wheel_rr, wheel_lf, wheel_rf, joint_lr, joint_rr, joint_lf, joint_rf};
-  float vel[] = {0, 0, 0, 0, 0, 0, 0, 0};
-  float eff[] = {0, 0, 0, 0, 0, 0, 0, 0};
-
-  joint_msg.position = pos;
-  joint_msg.velocity = vel;
-  joint_msg.effort = eff;
+  for (int i = 0; i < 8; i++)
+  {
+    msg.position[i] = pos[i];
+  }
 
   // Publish the message.
-  pub.publish(joint_msg);
+  pub.publish(msg);
 }
 
 int main(int argc, char **argv)
@@ -50,17 +55,18 @@ int main(int argc, char **argv)
   ros::NodeHandle nh;
 
   // Create a publisher object (to gazebo simulation)
-  pub = nh.advertise<sensor_msgs::JointState>("joint_states", 1000);
+  pub = nh.advertise<sensor_msgs::JointState>("to_joint_states", 1000);
 
   // Create a subscriber object.
   ros::Subscriber sub = nh.subscribe("joint_state", 1000, subCallback);
 
-  // Loop at 2Hz until the node is shut down.
-  ros::Rate rate(2);
+  ros::Rate rateController = ros::Rate(20);
 
+  // Main iterative code
   while (ros::ok())
   {
-    // Wait until it's time for another iteration.
+    // Control rate
     ros::spin();
+    rateController.sleep();
   }
 }
