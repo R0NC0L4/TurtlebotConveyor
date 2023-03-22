@@ -460,7 +460,7 @@ This is the result:
 
 <img title="" src="img/gamepad.gif" alt="gamepad.gif" data-align="center">
 
-
+ToDo: read encoder and publish to the joint_states (robot-rviz communication)
 
 # Useful Links
 
