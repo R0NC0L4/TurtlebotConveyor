@@ -2,7 +2,7 @@
 <robot name="conveyor" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 
-    <xacro:include filename="$(find conveyor_description_pkg)/urdf/wheel.urdf.xacro" />
+    <xacro:include filename="$(find conveyor_description_pkg)/urdf/wheel_joints.urdf.xacro" />
 
     <!-- ros_control plugin -->
     <gazebo>
@@ -12,122 +12,9 @@
         </plugin>
     </gazebo>
 
-    <!-- Box Inertia -->
-    <xacro:macro name="box_inertia" params="m w h d">
-        <inertia ixx="${m / 12.0 * (d*d + h*h)}" ixy="0.0" ixz="0.0" iyy="${m / 12.0 * (w*w + h*h)}" iyz="0.0" izz="${m / 12.0 * (w*w + d*d)}" />
-    </xacro:macro>
-
-    <!-- Defining the colors used in this robot -->
-    <material name="Black">
-        <color rgba="0.0 0.0 0.0 1.0" />
-    </material>
-
-    <material name="Red">
-        <color rgba="0.8 0.0 0.0 1.0" />
-    </material>
-
-    <material name="White">
-        <color rgba="1.0 1.0 1.0 1.0" />
-    </material>
-
-
-    <material name="Blue">
-        <color rgba="0.0 0.0 0.8 1.0" />
-    </material>
-
-
-    <!-- PROPERTY LIST -->
-    <!--All units in m-kg-s-radians unit system -->
-    <xacro:property name="M_PI" value="3.1415926535897931" />
-    <xacro:property name="M_PI_2" value="1.570796327" />
-    <xacro:property name="DEG_TO_RAD" value="0.017453293" />
-
-    <!-- Main body radius and height -->
-    <!-- Main Body Cylinder base   -->
-    <xacro:property name="base_length" value="0.15" /> <!-- BOX -->
-    <xacro:property name="base_height" value="0.02" />
-    <xacro:property name="base_mass" value="10" /> <!-- in kg-->
-
-
-    <!-- caster wheel radius and height -->
-    <!-- caster wheel mass -->
-    <xacro:property name="servo_cube" value="0.015" />
-    <xacro:property name="servo_mass" value="2.5" /> <!-- in kg-->
-
-    <!-- Hokuyo Laser scanner -->
-    <xacro:property name="hokuyo_size" value="0.01 0.05 0.02" />
-
-    <xacro:macro name="servo" params="front right parent axisX axisY angle">
-
-        <!-- Servo link -->
-        <link name="servo_${front}_${right}_link">
-
-            <visual>
-                <origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
-                <geometry>
-                    <box size="${servo_cube} ${servo_cube} ${servo_cube}" />
-                </geometry>
-                <material name="Black" />
-            </visual>
-            <visual>
-                <origin xyz="0 ${servo_cube/2} ${-servo_cube}" rpy="${M_PI/2} 0 0" />
-                <geometry>
-                    <box size="${servo_cube} ${servo_cube*2} ${servo_cube/1.5}" />
-                </geometry>
-                <material name="Black" />
-            </visual>
-
-
-            <collision>
-                <origin xyz="0 ${servo_cube/2} ${-servo_cube}" rpy="${M_PI/2} 0 0" />
-                <geometry>
-                    <box size="${servo_cube} ${servo_cube*2} ${servo_cube/1.5}" />
-                </geometry>
-            </collision>
-            <inertial>
-                <mass value="${servo_mass}" />
-                <origin xyz="0 0 0" />
-                <xacro:box_inertia m="${servo_mass}" w="${servo_cube}" h="${servo_cube}" d="${servo_cube}" />
-                <!-- <inertia ixx="0.001" ixy="0.0" ixz="0.0"
-                    iyy="0.001" iyz="0.0"
-                    izz="0.001" /> -->
-            </inertial>
-        </link>
-
-        <!-- Servo joint -->
-        <joint name="servo_${front}_${right}_joint" type="revolute">
-            <parent link="${parent}" />
-            <child link="servo_${front}_${right}_link" />
-            <origin xyz="${axisX * base_length/2}  ${axisY *base_length/2} 0" rpy="0 0 ${angle}" />
-            <axis xyz="0 0 1" rpy="0 0 0" />
-            <limit effort="100" velocity="100" lower="${-2*M_PI}" upper="${2*M_PI}" />
-            <dynamics damping="0" friction="0" />
-        </joint>
-
-        <gazebo reference="servo_${front}_${right}_link">
-            <selfCollide>false</selfCollide>
-            <turnGravityOff>false</turnGravityOff>
-            <mu1>0.2</mu1>
-            <mu2>0.2</mu2>
-        </gazebo>
-
-        <!-- Servo transmission -->
-        <transmission name="tran_servo_${front}_${right}">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="servo_${front}_${right}_joint">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="servo_${front}_${right}_motor">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-
-    </xacro:macro>
-
-
     <!-- BASE-FOOTPRINT -->
-    <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin -->
+    <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link
+    origin -->
     <link name="base_footprint">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -152,12 +39,14 @@
 
 
     <!-- BASE-LINK -->
-    <!--Actual body/chassis of the robot-->
+    <!--Actual
+    body/chassis of the robot-->
     <link name="base_link">
         <inertial>
             <mass value="${base_mass}" />
             <origin xyz="0 0 0" />
-            <xacro:box_inertia m="${base_mass}" w="${base_length}" h="${base_length}" d="${base_height}" />
+            <xacro:box_inertia m="${base_mass}" w="${base_length}" h="${base_length}"
+                d="${base_height}" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -180,19 +69,27 @@
 
 
     <!-- Wheel 1 -->
-    <xacro:servo front="front" right="left" parent="base_link" axisX="1" axisY="1" angle="${3*M_PI/4}"/> <!-- ${-M_PI/4} -->
-    <xacro:wheel fb="front" lr="left" parent="servo_front_left_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="0" rot = "-1"/>
+    <xacro:servo front="front" right="left" parent="base_link" axisX="1" axisY="1"
+        angle="${3*M_PI/4}" /> <!-- ${-M_PI/4} -->
+    <xacro:wheel fb="front" lr="left" parent="servo_front_left_link" translateX="0" translateY="0"
+        translateZ="${-base_height-0.0075}" flipY="1" flipX="0" rot="-1" />
     <!-- Wheel 2 -->
-    <xacro:servo front="front" right="right" parent="base_link" axisX="1" axisY="-1" angle="${M_PI/4}" /> <!-- ${5*M_PI/4} -->
-    <xacro:wheel fb="front" lr="right" parent="servo_front_right_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="1" rot = "1"/>
+    <xacro:servo front="front" right="right" parent="base_link" axisX="1" axisY="-1"
+        angle="${M_PI/4}" /> <!-- ${5*M_PI/4} -->
+    <xacro:wheel fb="front" lr="right" parent="servo_front_right_link" translateX="0" translateY="0"
+        translateZ="${-base_height-0.0075}" flipY="1" flipX="1" rot="1" />
     <!-- Wheel 3 -->
-    <xacro:servo front="back" right="left" parent="base_link" axisX="-1" axisY="1" angle="${5*M_PI/4}" /> <!-- ${M_PI/4} -->
-    <xacro:wheel fb="back" lr="left" parent="servo_back_left_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="0" rot = "-1"/>
+    <xacro:servo front="back" right="left" parent="base_link" axisX="-1" axisY="1"
+        angle="${5*M_PI/4}" /> <!-- ${M_PI/4} -->
+    <xacro:wheel fb="back" lr="left" parent="servo_back_left_link" translateX="0" translateY="0"
+        translateZ="${-base_height-0.0075}" flipY="1" flipX="0" rot="-1" />
     <!-- Wheel 4 -->
-    <xacro:servo front="back" right="right" parent="base_link" axisX="-1" axisY="-1" angle="${-M_PI/4}" /> <!-- ${3*M_PI/4} -->
-    <xacro:wheel fb="back" lr="right" parent="servo_back_right_link" translateX="0" translateY="0" translateZ="${-base_height-0.0075}" flipY="1" flipX="1" rot = "1"/>
+    <xacro:servo front="back" right="right" parent="base_link" axisX="-1" axisY="-1"
+        angle="${-M_PI/4}" /> <!-- ${3*M_PI/4} -->
+    <xacro:wheel fb="back" lr="right" parent="servo_back_right_link" translateX="0" translateY="0"
+        translateZ="${-base_height-0.0075}" flipY="1" flipX="1" rot="1" />
 
-    
+
     <!-- laser -->
 
     <link name="hokuyo_link">
@@ -208,7 +105,7 @@
             <geometry>
                 <box size="${hokuyo_size}" />
             </geometry>
-          </collision>
+        </collision>
     </link>
 
     <joint name="hokuyo_joint" type="fixed">

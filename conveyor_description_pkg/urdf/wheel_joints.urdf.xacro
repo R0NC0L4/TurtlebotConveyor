@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<robot name="wheel" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--All units in m-kg-s-radians unit system -->
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="M_PI_2" value="1.570796327" />
+  <xacro:property name="DEG_TO_RAD" value="0.017453293" />
+
+
+
+  <!-- ############################################################### -->
+  <!-- ################ Wheels ####################################### -->
+  <!-- ############################################################### -->
+
+  <xacro:property name="wheel_radius" value="0.015" />
+  <xacro:property name="wheel_height" value="0.0075" />
+  <xacro:property name="wheel_mass" value="5" /> <!-- in kg-->
+
+  <xacro:property name="base_x_origin_to_wheel_origin" value="0" />
+  <xacro:property name="base_y_origin_to_wheel_origin" value="0" />
+  <xacro:property name="base_z_origin_to_wheel_origin" value="0" />
+
+  <!-- Macro Definition -->
+  <xacro:macro name="cylinder_inertia" params="m r h">
+    <inertia ixx="${m*(3*r*r+h*h)/12}" ixy="0" ixz="0"
+      iyy="${m*(3*r*r+h*h)/12}" iyz="0"
+      izz="${m*r*r/2}" />
+  </xacro:macro>
+
+  <xacro:macro name="wheel" params="fb lr parent translateX translateY translateZ flipY flipX rot">
+    <!--fb
+    : front, back ; lr: left, right -->
+    <link name="${fb}_${lr}_wheel">
+      <visual>
+        <origin xyz="0 0 0" rpy="${flipY*M_PI/2} 0  0 " />
+        <geometry>
+          <cylinder length="${wheel_height}" radius="${wheel_radius}" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="${flipY*M_PI/2} 0 0 " />
+        <geometry>
+          <cylinder length="${wheel_height}" radius="${wheel_radius}" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${wheel_mass}" />
+        <origin xyz="0 0 0" />
+        <xacro:cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_height}" />
+      </inertial>
+    </link>
+
+    <gazebo reference="${fb}_${lr}_wheel">
+      <!-- <mu1 value="1.0" />
+      <mu2 value="1.0" />
+      <kp value="10000000.0" />
+      <kd value="1.0" />
+      <fdir1 value="1 0 0" /> -->
+      <selfCollide>false</selfCollide>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.01</mu>
+            <mu2>1.01</mu2>
+            <fdir1>0 0 1</fdir1>
+            <slip1>0</slip1>
+            <slip2>0</slip2>
+          </ode>
+        </friction>
+        <bounce>
+          <restitution_coefficient>0.0</restitution_coefficient>
+          <threshold>100000.0</threshold>
+        </bounce>
+        <contact>
+          <ode>
+            <soft_cfm>0.0</soft_cfm>
+            <soft_erp>0.2</soft_erp>
+            <kp>100000.0</kp>
+            <kd>1.0</kd>
+            <max_vel>100.0</max_vel>
+            <min_depth>0.001</min_depth>
+          </ode>
+        </contact>
+      </surface>
+      <material>Gazebo/Grey</material>
+      <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <joint name="${fb}_${lr}_wheel_joint" type="continuous">
+      <parent link="${parent}" />
+      <child link="${fb}_${lr}_wheel" />
+      <origin xyz="${translateX} ${translateY} ${translateZ}" rpy="0 0 ${flipX*M_PI}" />
+      <axis xyz="0 ${rot} 0" rpy="0  0" />
+      <limit effort="100" velocity="100" />
+      <joint_properties damping="0.0" friction="0.0" />
+    </joint>
+
+    <!-- Transmission -->
+    <transmission name="${fb}_${lr}_wheel_joint_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${fb}_${lr}_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${fb}_${lr}_wheel_joint_motor">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </xacro:macro>
+
+
+  <!-- ############################################################### -->
+  <!-- ################ Joints ####################################### -->
+  <!-- ############################################################### -->
+
+  <!-- Box Inertia -->
+  <xacro:macro name="box_inertia" params="m w h d">
+    <inertia ixx="${m / 12.0 * (d*d + h*h)}" ixy="0.0" ixz="0.0" iyy="${m / 12.0 * (w*w + h*h)}"
+      iyz="0.0" izz="${m / 12.0 * (w*w + d*d)}" />
+  </xacro:macro>
+
+  <!-- Defining the colors used in this robot -->
+  <material name="Black">
+    <color rgba="0.0 0.0 0.0 1.0" />
+  </material>
+
+  <material name="Red">
+    <color rgba="0.8 0.0 0.0 1.0" />
+  </material>
+
+  <material name="White">
+    <color rgba="1.0 1.0 1.0 1.0" />
+  </material>
+
+
+  <material name="Blue">
+    <color rgba="0.0 0.0 0.8 1.0" />
+  </material>
+
+
+  <!-- PROPERTY LIST -->
+
+  <!-- Main body radius and height -->
+  <!-- Main Body Cylinder base   -->
+  <xacro:property name="base_length" value="0.15" /> <!-- BOX -->
+  <xacro:property name="base_height" value="0.02" />
+  <xacro:property name="base_mass" value="10" /> <!-- in kg-->
+
+
+  <!-- caster wheel radius and height -->
+  <!-- caster wheel mass -->
+  <xacro:property name="servo_cube" value="0.015" />
+  <xacro:property name="servo_mass" value="2.5" /> <!-- in kg-->
+
+  <!-- Hokuyo Laser scanner -->
+  <xacro:property name="hokuyo_size" value="0.01 0.05 0.02" />
+
+  <xacro:macro name="servo" params="front right parent axisX axisY angle">
+
+    <!-- Servo link -->
+    <link name="servo_${front}_${right}_link">
+
+      <visual>
+        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0" />
+        <geometry>
+          <box size="${servo_cube} ${servo_cube} ${servo_cube}" />
+        </geometry>
+        <material name="Black" />
+      </visual>
+      <visual>
+        <origin xyz="0 ${servo_cube/2} ${-servo_cube}" rpy="${M_PI/2} 0 0" />
+        <geometry>
+          <box size="${servo_cube} ${servo_cube*2} ${servo_cube/1.5}" />
+        </geometry>
+        <material name="Black" />
+      </visual>
+
+
+      <collision>
+        <origin xyz="0 ${servo_cube/2} ${-servo_cube}" rpy="${M_PI/2} 0 0" />
+        <geometry>
+          <box size="${servo_cube} ${servo_cube*2} ${servo_cube/1.5}" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${servo_mass}" />
+        <origin xyz="0 0 0" />
+        <xacro:box_inertia m="${servo_mass}" w="${servo_cube}" h="${servo_cube}" d="${servo_cube}" />
+        <!-- <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                    iyy="0.001" iyz="0.0"
+                    izz="0.001" /> -->
+      </inertial>
+    </link>
+
+    <!-- Servo joint -->
+    <joint name="servo_${front}_${right}_joint" type="revolute">
+      <parent link="${parent}" />
+      <child link="servo_${front}_${right}_link" />
+      <origin xyz="${axisX * base_length/2}  ${axisY *base_length/2} 0" rpy="0 0 ${angle}" />
+      <axis xyz="0 0 1" rpy="0 0 0" />
+      <limit effort="100" velocity="100" lower="${-2*M_PI}" upper="${2*M_PI}" />
+      <dynamics damping="0" friction="0" />
+    </joint>
+
+    <gazebo reference="servo_${front}_${right}_link">
+      <selfCollide>false</selfCollide>
+      <turnGravityOff>false</turnGravityOff>
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+    </gazebo>
+
+    <!-- Servo transmission -->
+    <transmission name="tran_servo_${front}_${right}">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="servo_${front}_${right}_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="servo_${front}_${right}_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </xacro:macro>
+  
+</robot>
