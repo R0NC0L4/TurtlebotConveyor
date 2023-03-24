@@ -1,8 +1,6 @@
-// This program publishes randomly-generated velocity
-// messages for turtlesim.
 #include <ros/ros.h>
-#include <std_msgs/Float32.h> // For geometry_msgs::Twist
-#include <stdlib.h>           // For rand() and RAND_MAX
+#include <std_msgs/Float32.h> 
+#include <stdlib.h>          
 #include <termios.h>
 #include <conveyor_description_pkg/conveyor_state.h>
 #include <conveyor_description_pkg/buttons.h>
