@@ -57,6 +57,7 @@ add_message_files(
   FILES
   conveyor_state.msg
   buttons.msg
+  desired_conf.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -152,6 +153,9 @@ target_link_libraries(joystick ${catkin_LIBRARIES})
 
 add_executable(arduino2rviz scripts/arduino2rviz.cpp)
 target_link_libraries(arduino2rviz ${catkin_LIBRARIES})
+
+add_executable(mapping scripts/mapping.cpp)
+target_link_libraries(mapping ${catkin_LIBRARIES})
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

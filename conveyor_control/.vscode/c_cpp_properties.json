@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/andre/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/andre/catkin_ws/src/ros_astra_camera/include/**",
+        "/home/andre/catkin_ws/src/beginner_tutorials/include/**",
+        "/home/andre/catkin_ws/src/TurtlebotConveyor/controller_manager/include/**",
+        "/home/andre/catkin_ws/src/lab1/include/**",
+        "/home/andre/catkin_ws/src/learning_tf2/include/**",
+        "/home/andre/catkin_ws/src/mario/include/**",
+        "/home/andre/catkin_ws/src/my_robot_description_pkg/include/**",
+        "/home/andre/catkin_ws/src/prova_pub_sub/include/**",
+        "/home/andre/catkin_ws/src/robot_localization/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
