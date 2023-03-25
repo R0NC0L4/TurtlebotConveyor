@@ -20,6 +20,8 @@ In this repository, you'll find all the resources you need to get up and running
 
 - [Moving the Robot using ROS](#moving-the-robot-using-ros)
 
+- [Other useful files](#other-useful-files)
+
 - [Useful Links](#useful-links)
 
 # Components
@@ -461,6 +463,10 @@ This is the result:
 <img title="" src="img/gamepad.gif" alt="gamepad.gif" data-align="center">
 
 ToDo: read encoder and publish to the joint_states (robot-rviz communication)
+
+# Other useful files
+
+
 
 # Useful Links
 
