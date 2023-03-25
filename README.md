@@ -466,7 +466,7 @@ This is the result:
 
 ## conveyor2rviz.launch
 
-The file is located in *TurtlebotConveyor/conveyor_description_pkg/launch*.
+The file is located in *TurtlebotConveyor/conveyor_description_pkg/launch* and allows to show the conveyor configuration in RViz by reading the joint state from the Arduino board.
 
 Open a terminal window and use this launch file
 
@@ -474,13 +474,11 @@ Open a terminal window and use this launch file
 roslaunch conveyor_description_pkg conveyor2rviz.launch
 ```
 
-This launch file allows to show the conveyor configuration in rviz reading the joints state from the arduino board.
-
 ## view_conveyor_gazebo_roam.launch
 
-The file is located in *TurtlebotConveyor/conveyor_description_pkg/launch*.
+This file is located in *TurtlebotConveyor/conveyor_description_pkg/launch* and enables the execution and simulation of control algorithms in Gazebo. The default algorithm implemented in this file is one in which the robot moves forward until it encounters an obstacle, at which point it stops and rotates to a new orientation.
 
-Open a terminal window and use this launch file
+To use this launch file, open a terminal window and enter the following command:
 
 ```
 roslaunch conveyor_description_pkg view_conveyor_gazebo_roam.launch
@@ -488,11 +486,11 @@ roslaunch conveyor_description_pkg view_conveyor_gazebo_roam.launch
 
 This file enables the execution and simulation of control algorithms in Gazebo. In this instance, the algorithm implemented is one in which the robot moves in a forward direction until it encounters an obstacle, at which point it ceases forward movement and rotates to a new orientation.
 
-This is the rqt graph:
+This rqt graph shows the nodes and topics related to the conveyor simulation:
 
 <img title="" src="img/roam.png" alt="roam.png" data-align="center">
 
-To use a different control algorithm, it's possible to modify the file's code by replacing the name of the script that contains the desired algorithm.
+To use a different control algorithm, it's possible to modify the file's code by replacing the name of the script that contains the desired algorithm. For example, modify the "algorithm" node in the launch file as follows:
 
 ```markup
 <!-- Algorithm -->
