@@ -462,9 +462,29 @@ This is the result:
 
 <img title="" src="img/gamepad.gif" alt="gamepad.gif" data-align="center">
 
-ToDo: read encoder and publish to the joint_states (robot-rviz communication)
-
 # Other useful files
+
+## conveyor2rviz.launch
+
+The file is located in *TurtlebotConveyor/conveyor_description_pkg/launch*.
+
+Open a terminal window and use this launch file
+
+```
+roslaunch conveyor_description_pkg conveyor2rviz.launch
+```
+
+This launch file allows to show the conveyor configuration in rviz reading the joints state from the arduino board.
+
+## view_conveyor_gazebo_roam.launch
+
+The file is located in *TurtlebotConveyor/conveyor_description_pkg/launch*.
+
+Open a terminal window and use this launch file
+
+```
+roslaunch conveyor_description_pkg view_conveyor_gazebo_roam.launch
+```
 
 
 
