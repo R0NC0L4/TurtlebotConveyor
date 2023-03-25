@@ -492,7 +492,14 @@ This is the rqt graph:
 
 <img title="" src="img/roam.png" alt="roam.png" data-align="center">
 
+To use a different control algorithm, it's possible to modify the file's code by replacing the name of the script that contains the desired algorithm.
 
+```markup
+<!-- Algorithm -->
+<node name="algorithm" pkg="conveyor_control" type="roam" />
+```
+
+This action will enable the user to execute and simulate the robot's behavior according to the new control algorithm implemented in the script.
 
 # Useful Links
 
