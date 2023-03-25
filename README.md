@@ -486,6 +486,12 @@ Open a terminal window and use this launch file
 roslaunch conveyor_description_pkg view_conveyor_gazebo_roam.launch
 ```
 
+This file enables the execution and simulation of control algorithms in Gazebo. In this instance, the algorithm implemented is one in which the robot moves in a forward direction until it encounters an obstacle, at which point it ceases forward movement and rotates to a new orientation.
+
+This is the rqt graph:
+
+<img title="" src="img/roam.png" alt="roam.png" data-align="center">
+
 
 
 # Useful Links
