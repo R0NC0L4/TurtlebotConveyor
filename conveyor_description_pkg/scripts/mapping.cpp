@@ -1,7 +1,7 @@
 // This program remaps orientation and velocity to make the robot move
 #include <ros/ros.h>
-#include <std_msgs/Float32.h> 
-#include <stdlib.h>           
+#include <std_msgs/Float32.h>
+#include <stdlib.h>
 #include <termios.h>
 #include <conveyor_description_pkg/conveyor_state.h>
 #include <conveyor_description_pkg/desired_conf.h>
@@ -9,96 +9,103 @@
 
 ros::Publisher pub;
 
+float last_angle = 0;
+
 void subCallback(const conveyor_description_pkg::desired_conf msg)
 {
   conveyor_description_pkg::conveyor_state state;
   float vlc = msg.velocity;
   if (msg.rotate == false)
   {
-    if (msg.angle <= 45 && msg.angle >= -45)
+    if (msg.angle >= -180 && msg.angle <= 180)
     {
-      float ang = msg.angle + 180;
+      if ((msg.angle < 45 && msg.angle > -45) || ((msg.angle == 45 && last_angle <= 45) || (msg.angle == -45 && last_angle >= -45)))
+      {
+        float ang = msg.angle + 180;
 
-      state.wheel_lr = -vlc;
-      state.wheel_rr = vlc;
-      state.wheel_lf = -vlc;
-      state.wheel_rf = vlc;
+        state.wheel_lr = -vlc;
+        state.wheel_rr = vlc;
+        state.wheel_lf = -vlc;
+        state.wheel_rf = vlc;
 
-      state.joint_lr = ang - 45;
-      state.joint_rr = ang + 45;
-      state.joint_lf = ang + 45;
-      state.joint_rf = ang - 45;
-    }
-    else if ((msg.angle < 135 && msg.angle > 45))
-    {
-      float ang = msg.angle + 90;
+        state.joint_lr = ang - 45;
+        state.joint_rr = ang + 45;
+        state.joint_lf = ang + 45;
+        state.joint_rf = ang - 45;
+      }
+      else if ((msg.angle < 135 && msg.angle > 45) || ((msg.angle == 135 && last_angle <= 135) || (msg.angle == 45 && last_angle >= 45)))
+      {
+        float ang = msg.angle + 90;
 
-      state.wheel_lr = -vlc;
-      state.wheel_rr = -vlc;
-      state.wheel_lf = vlc;
-      state.wheel_rf = vlc;
+        state.wheel_lr = -vlc;
+        state.wheel_rr = -vlc;
+        state.wheel_lf = vlc;
+        state.wheel_rf = vlc;
 
-      state.joint_lr = ang + 45;
-      state.joint_rr = ang - 45;
-      state.joint_lf = ang - 45;
-      state.joint_rf = ang + 45;
-    }
-    else if ((msg.angle >= 135 && msg.angle <= 180))
-    {
-      float ang = abs(msg.angle);
+        state.joint_lr = ang + 45;
+        state.joint_rr = ang - 45;
+        state.joint_lf = ang - 45;
+        state.joint_rf = ang + 45;
+      }
+      else if ((msg.angle > 135 && msg.angle < 180) || ((msg.angle == 180 && last_angle <= 180) || (msg.angle == 135 && last_angle >= 135)))
+      {
+        float ang = abs(msg.angle);
 
-      state.wheel_lr = vlc;
-      state.wheel_rr = -vlc;
-      state.wheel_lf = vlc;
-      state.wheel_rf = -vlc;
+        state.wheel_lr = vlc;
+        state.wheel_rr = -vlc;
+        state.wheel_lf = vlc;
+        state.wheel_rf = -vlc;
 
-      state.joint_lr = ang - 45;
-      state.joint_rr = ang + 45;
-      state.joint_lf = ang + 45;
-      state.joint_rf = ang - 45;
-    }
-    else if ((msg.angle >= -180 && msg.angle <= -135))
-    {
-      float ang = msg.angle + 360;
+        state.joint_lr = ang - 45;
+        state.joint_rr = ang + 45;
+        state.joint_lf = ang + 45;
+        state.joint_rf = ang - 45;
+      }
+      else if ((msg.angle > -180 && msg.angle < -135) || ((msg.angle == -135 && last_angle <= -135) || (msg.angle == -180 && last_angle >= -180)))
+      {
+        float ang = msg.angle + 360;
 
-      state.wheel_lr = vlc;
-      state.wheel_rr = -vlc;
-      state.wheel_lf = vlc;
-      state.wheel_rf = -vlc;
+        state.wheel_lr = vlc;
+        state.wheel_rr = -vlc;
+        state.wheel_lf = vlc;
+        state.wheel_rf = -vlc;
 
-      state.joint_lr = ang - 45;
-      state.joint_rr = ang + 45;
-      state.joint_lf = ang + 45;
-      state.joint_rf = ang - 45;
-    }
-    else if (msg.angle > -135 && msg.angle < -45)
-    {
-      float ang = msg.angle + 270;
+        state.joint_lr = ang - 45;
+        state.joint_rr = ang + 45;
+        state.joint_lf = ang + 45;
+        state.joint_rf = ang - 45;
+      }
+      else if ((msg.angle > -135 && msg.angle < -45) || ((msg.angle == -45 && last_angle <= -45) || (msg.angle == -135 && last_angle >= -135)))
+      {
+        float ang = msg.angle + 270;
 
-      state.wheel_lr = vlc;
-      state.wheel_rr = vlc;
-      state.wheel_lf = -vlc;
-      state.wheel_rf = -vlc;
+        state.wheel_lr = vlc;
+        state.wheel_rr = vlc;
+        state.wheel_lf = -vlc;
+        state.wheel_rf = -vlc;
 
-      state.joint_lr = ang + 45;
-      state.joint_rr = ang - 45;
-      state.joint_lf = ang - 45;
-      state.joint_rf = ang + 45;
+        state.joint_lr = ang + 45;
+        state.joint_rr = ang - 45;
+        state.joint_lf = ang - 45;
+        state.joint_rf = ang + 45;
+      }
+
+      last_angle = msg.angle;
     }
   }
   else
   {
-      float ang = 180;
+    float ang = 180;
 
-      state.wheel_lr = vlc;
-      state.wheel_rr = vlc;
-      state.wheel_lf = vlc;
-      state.wheel_rf = vlc;
+    state.wheel_lr = vlc;
+    state.wheel_rr = vlc;
+    state.wheel_lf = vlc;
+    state.wheel_rf = vlc;
 
-      state.joint_lr = ang;
-      state.joint_rr = ang;
-      state.joint_lf = ang;
-      state.joint_rf = ang;
+    state.joint_lr = ang;
+    state.joint_rr = ang;
+    state.joint_lf = ang;
+    state.joint_rf = ang;
   }
 
   // Publish the message.
