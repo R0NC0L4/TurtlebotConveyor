@@ -499,6 +499,16 @@ To use a different control algorithm, it's possible to modify the file's code by
 
 This action will enable the user to execute and simulate the robot's behavior according to the new control algorithm implemented in the script.
 
+## Lidar Configuration
+In order to use the lidar, we had to install the LD08 driver. We followed the procedure on the [Robotis site](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup) (refer to the 3.2.8 NEW LDS-02 Configuration). Warning: Choose the right ROS's version!!
+
+To see everthing is woking open the terminal window and use the following command:
+
+
+```
+roslaunch ld08_driver ld08.launch
+```
+
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
