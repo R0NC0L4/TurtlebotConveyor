@@ -149,6 +149,9 @@ target_link_libraries(roam ${catkin_LIBRARIES})
 add_executable(directions scripts/directions.cpp)
 target_link_libraries(directions ${catkin_LIBRARIES})
 
+add_executable(roomba scripts/roomba.cpp)
+target_link_libraries(roomba ${catkin_LIBRARIES})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
