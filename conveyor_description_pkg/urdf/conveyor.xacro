@@ -96,20 +96,21 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size="${hokuyo_size}" />
+                <cylinder radius = "${hokuyo_size}" length = "${hokuyo_size}"/>
             </geometry>
             <material name="Blue" />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size="${hokuyo_size}" />
+                <cylinder radius = "${hokuyo_size}" length = "${hokuyo_size}"/>
             </geometry>
         </collision>
     </link>
 
     <joint name="hokuyo_joint" type="fixed">
-        <origin xyz="${base_length/2} 0 ${-base_height+0.005}" rpy="0 0 0" />
+        <!-- <origin xyz="${base_length/2} 0 ${-base_height+0.005}" rpy="0 0 0" /> -->
+        <origin xyz="0 0 ${base_height}" rpy="0 0 0" />
         <parent link="base_link" />
         <child link="hokuyo_link" />
     </joint>
@@ -120,14 +121,14 @@
         <sensor type="ray" name="head_hokuyo_sensor">
             <origin xyz="${base_length/2} 0 ${-base_height+0.005}" rpy="0 0 " />
             <visualize>false</visualize>
-            <update_rate>40</update_rate>
+            <update_rate>10</update_rate>
             <ray>
                 <scan>
                     <horizontal>
                         <samples>720</samples>
                         <resolution>1</resolution>
-                        <min_angle>-1.570796</min_angle>
-                        <max_angle>1.570796</max_angle>
+                        <min_angle>-3.141592</min_angle>
+                        <max_angle>3.141592</max_angle>
                     </horizontal>
                 </scan>
                 <range>

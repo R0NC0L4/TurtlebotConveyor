@@ -154,7 +154,8 @@
   <xacro:property name="servo_mass" value="2.5" /> <!-- in kg-->
 
   <!-- Hokuyo Laser scanner -->
-  <xacro:property name="hokuyo_size" value="0.01 0.05 0.02" />
+  <!-- <xacro:property name="hokuyo_size" value="0.01 0.05 0.02" /> -->
+  <xacro:property name="hokuyo_size" value="0.02" /> 
 
   <xacro:macro name="servo" params="front right parent axisX axisY angle">
 
