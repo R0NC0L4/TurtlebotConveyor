@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <robot name="wheel" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!--All units in m-kg-s-radians unit system -->
+  <!--All
+  units in m-kg-s-radians unit system -->
   <xacro:property name="M_PI" value="3.1415926535897931" />
   <xacro:property name="M_PI_2" value="1.570796327" />
   <xacro:property name="DEG_TO_RAD" value="0.017453293" />
-
 
 
   <!-- ############################################################### -->
   <!-- ################ Wheels ####################################### -->
   <!-- ############################################################### -->
 
-  <xacro:property name="wheel_radius" value="0.015" />
-  <xacro:property name="wheel_height" value="0.0075" />
+  <xacro:property name="wheel_radius" value="0.03" /> <!-- in m-->
+  <xacro:property name="wheel_height" value="0.017" /> <!-- in m-->
   <xacro:property name="wheel_mass" value="5" /> <!-- in kg-->
 
   <xacro:property name="base_x_origin_to_wheel_origin" value="0" />
@@ -139,24 +139,6 @@
   </material>
 
 
-  <!-- PROPERTY LIST -->
-
-  <!-- Main body radius and height -->
-  <!-- Main Body Cylinder base   -->
-  <xacro:property name="base_length" value="0.15" /> <!-- BOX -->
-  <xacro:property name="base_height" value="0.02" />
-  <xacro:property name="base_mass" value="10" /> <!-- in kg-->
-
-
-  <!-- caster wheel radius and height -->
-  <!-- caster wheel mass -->
-  <xacro:property name="servo_cube" value="0.015" />
-  <xacro:property name="servo_mass" value="2.5" /> <!-- in kg-->
-
-  <!-- Hokuyo Laser scanner -->
-  <!-- <xacro:property name="hokuyo_size" value="0.01 0.05 0.02" /> -->
-  <xacro:property name="hokuyo_size" value="0.02" /> 
-
   <xacro:macro name="servo" params="front right parent axisX axisY angle">
 
     <!-- Servo link -->
@@ -224,5 +206,5 @@
     </transmission>
 
   </xacro:macro>
-  
+
 </robot>

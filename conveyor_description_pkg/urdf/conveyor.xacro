@@ -2,6 +2,24 @@
 <robot name="conveyor" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 
+    <!-- PROPERTY LIST -->
+
+    <!-- Main Body Box -->
+    <xacro:property name="base_length" value="0.255" /> <!-- in m-->
+    <xacro:property name="base_height" value="0.04" /> <!-- in m-->
+    <xacro:property name="base_mass" value="10" /> <!-- in kg-->
+
+
+    <!-- caster wheel radius and height -->
+    <!-- caster wheel mass -->
+    <xacro:property name="servo_cube" value="0.03" /> <!-- in m-->
+    <xacro:property name="servo_mass" value="2.5" /> <!-- in kg-->
+
+    <!-- Hokuyo Laser scanner -->
+    <!-- <xacro:property name="hokuyo_size" value="0.01 0.05 0.02" /> -->
+    <xacro:property name="hokuyo_size" value="0.04" />
+
+
     <xacro:include filename="$(find conveyor_description_pkg)/urdf/wheel_joints.urdf.xacro" />
 
     <!-- ros_control plugin -->
@@ -71,23 +89,23 @@
     <!-- Wheel 1 -->
     <xacro:servo front="front" right="left" parent="base_link" axisX="1" axisY="1"
         angle="${3*M_PI/4}" /> <!-- ${-M_PI/4} -->
-    <xacro:wheel fb="front" lr="left" parent="servo_front_left_link" translateX="0" translateY="0"
-        translateZ="${-base_height-0.0075}" flipY="1" flipX="0" rot="-1" />
+    <xacro:wheel fb="front" lr="left" parent="servo_front_left_link" translateX="0" translateY="-0.005"
+        translateZ="${-base_height-0.011}" flipY="1" flipX="0" rot="-1" />
     <!-- Wheel 2 -->
     <xacro:servo front="front" right="right" parent="base_link" axisX="1" axisY="-1"
         angle="${M_PI/4}" /> <!-- ${5*M_PI/4} -->
-    <xacro:wheel fb="front" lr="right" parent="servo_front_right_link" translateX="0" translateY="0"
-        translateZ="${-base_height-0.0075}" flipY="1" flipX="1" rot="1" />
+    <xacro:wheel fb="front" lr="right" parent="servo_front_right_link" translateX="0" translateY="-0.005"
+        translateZ="${-base_height-0.011}" flipY="1" flipX="1" rot="1" />
     <!-- Wheel 3 -->
     <xacro:servo front="back" right="left" parent="base_link" axisX="-1" axisY="1"
         angle="${5*M_PI/4}" /> <!-- ${M_PI/4} -->
-    <xacro:wheel fb="back" lr="left" parent="servo_back_left_link" translateX="0" translateY="0"
-        translateZ="${-base_height-0.0075}" flipY="1" flipX="0" rot="-1" />
+    <xacro:wheel fb="back" lr="left" parent="servo_back_left_link" translateX="0" translateY="-0.005"
+        translateZ="${-base_height-0.011}" flipY="1" flipX="0" rot="-1" />
     <!-- Wheel 4 -->
     <xacro:servo front="back" right="right" parent="base_link" axisX="-1" axisY="-1"
         angle="${-M_PI/4}" /> <!-- ${3*M_PI/4} -->
-    <xacro:wheel fb="back" lr="right" parent="servo_back_right_link" translateX="0" translateY="0"
-        translateZ="${-base_height-0.0075}" flipY="1" flipX="1" rot="1" />
+    <xacro:wheel fb="back" lr="right" parent="servo_back_right_link" translateX="0" translateY="-0.005"
+        translateZ="${-base_height-0.011}" flipY="1" flipX="1" rot="1" />
 
 
     <!-- laser -->
@@ -96,21 +114,21 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius = "${hokuyo_size}" length = "${hokuyo_size}"/>
+                <cylinder radius="${hokuyo_size}" length="${hokuyo_size/2}" />
             </geometry>
             <material name="Blue" />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius = "${hokuyo_size}" length = "${hokuyo_size}"/>
+                <cylinder radius="${hokuyo_size}" length="${hokuyo_size/2}" />
             </geometry>
         </collision>
     </link>
 
     <joint name="hokuyo_joint" type="fixed">
         <!-- <origin xyz="${base_length/2} 0 ${-base_height+0.005}" rpy="0 0 0" /> -->
-        <origin xyz="0 0 ${base_height}" rpy="0 0 0" />
+        <origin xyz="0 0 ${base_height/2+hokuyo_size/4}" rpy="0 0 0" />
         <parent link="base_link" />
         <child link="hokuyo_link" />
     </joint>
@@ -119,7 +137,7 @@
         <material>Gazebo/Blue</material>
         <turnGravityOff>false</turnGravityOff>
         <sensor type="ray" name="head_hokuyo_sensor">
-            <origin xyz="${base_length/2} 0 ${-base_height+0.005}" rpy="0 0 " />
+            <origin xyz="${base_length/2} 0 ${-base_height}" rpy="0 0 " />
             <visualize>false</visualize>
             <update_rate>10</update_rate>
             <ray>
@@ -132,7 +150,7 @@
                     </horizontal>
                 </scan>
                 <range>
-                    <min>0.10</min>
+                    <min>0.1</min>
                     <max>20.0</max>
                     <resolution>0.001</resolution>
                 </range>
