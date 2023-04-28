@@ -31,7 +31,7 @@
         args="-urdf -model conveyor -param robot_description -x 0 -y 0 -z 1" />
 
     <!-- Algorithm -->
-    <node name="algorithm" pkg="conveyor_control" type="roomba" output="screen" />
+    <node name="algorithm" pkg="conveyor_control" type="roam" output="screen" />
     <node name="model_mapping" pkg="conveyor_description_pkg" type="mapping" />
     <node name="control2gazebo" pkg="conveyor_control" type="control2gazebo" />
 

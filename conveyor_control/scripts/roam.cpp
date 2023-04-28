@@ -1,48 +1,75 @@
 // This program makes the robot move forward. If the robot sees an obstacles it will rotate.
 #include <ros/ros.h>
-#include <std_msgs/Float64.h> 
+#include <std_msgs/Float64.h>
 #include <stdlib.h>
 #include <conveyor_description_pkg/desired_conf.h>
 #include <sensor_msgs/LaserScan.h>
 
 ros::Publisher pub;
 
-int getCollision(const sensor_msgs::LaserScan msg, int window, float distance)
+class Listener
 {
-   int c = 0;
-   int middle = msg.ranges.size() / 2;
-   for (int i = 0; i < window; i++)
+public:
+   int changed = 0;
+   float prev_angle = 0;
+
+   void subCallback(const sensor_msgs::LaserScan msg);
+
+   int getCollision(const sensor_msgs::LaserScan msg, float distance);
+};
+
+int Listener::getCollision(const sensor_msgs::LaserScan msg, float distance) // return collision angle
+{
+   // 1 sample == 1 degree
+
+   // int window = msg.ranges.size() / 4;
+   
+   // int middle = msg.ranges.size() / 2;
+   
+   for (int i = 0; i < msg.ranges.size(); i++)
    {
-      c = c || (msg.ranges[middle - (window / 2) + i] <= distance);
+      if (msg.ranges[i] < distance && msg.ranges[i] > 0.2)
+      {
+         ROS_INFO("%d", i);
+         return i; // return collision angle
+      }
    }
-   return c;
+   ROS_INFO("%d", 255);
+   return 255; // out of range value (no collision)
 }
 
-void subCallback(const sensor_msgs::LaserScan msg)
+void Listener::subCallback(const sensor_msgs::LaserScan msg)
 {
-   int collision = getCollision(msg, 700, 0.3);
+   int collisionAng = getCollision(msg, 0.5);
 
    conveyor_description_pkg::desired_conf state;
 
-   if (collision == 0)
+   if (collisionAng == 255) // no collsion
    {
       state.velocity = 100;
-      state.angle = 0;
-      state.rotate = false;
-      pub.publish(state);
+      state.angle = prev_angle;
    }
    else
    {
       state.velocity = 100;
-      state.angle = 180;
-      state.rotate = true;
 
-      pub.publish(state);
+      int random = -10 + (rand() % 11);
+      float newDir = (float)collisionAng + random;
+      if (newDir > 180 || newDir < -180)
+         newDir = 180;
+
+      state.angle = newDir;
    }
+   prev_angle = state.angle;
+   ROS_INFO("%f", prev_angle);
+   state.rotate = false;
+   pub.publish(state);
 }
 
 int main(int argc, char **argv)
 {
+   srand(time(NULL));
+
    // Initialize the ROS system and become a node.
    ros::init(argc, argv, "algorithm");
    ros::NodeHandle nh;
@@ -51,16 +78,16 @@ int main(int argc, char **argv)
    pub = nh.advertise<conveyor_description_pkg::desired_conf>("desired_configuration", 1000);
 
    // Create a subscriber object for scanner data.
-   ros::Subscriber sub = nh.subscribe("scan", 1000, subCallback);
+   Listener listener;
+   ros::Subscriber sub = nh.subscribe("scan", 1, &Listener::subCallback, &listener);
 
    ros::Rate rate(2);
 
-   float const_vel = 50;
-   float orientation = 180;
+   listener.prev_angle = 0;
 
    while (ros::ok())
    {
       ros::spin();
-      // rate.sleep();
+      ROS_INFO("%d", listener.changed);
    }
 }

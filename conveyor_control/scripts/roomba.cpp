@@ -23,7 +23,7 @@ public:
 bool Listener::getCollision(const sensor_msgs::LaserScan msg, float distance)
 {
    int c = 0;
-
+      
    for (int i = 0; i < msg.ranges.size(); i++)
    {
       c = c || (msg.ranges[i] <= distance && msg.ranges[i] > 0.11);
@@ -53,7 +53,7 @@ void Listener::subCallback(const sensor_msgs::LaserScan msg)
          int random_num = rand() % 100000;
          float change = 90 + ((double)random_num / 100000) * (180 - 90); // VEDI QUESTO PROBABILE ERRORE
          state.angle = (fmod(curr_angle + change, 360) - 180);
-         ROS_INFO("Collision. ANGLE: %f", state.angle);
+         // ROS_INFO("Collision. ANGLE: %f", state.angle);
       }
       prev_angle = state.angle;
       state.rotate = false;
