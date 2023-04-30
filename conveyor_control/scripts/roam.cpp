@@ -1,4 +1,4 @@
-// This program makes the robot move forward. If the robot sees an obstacles it will rotate.
+// This program makes the robot move forward. If the robot sees an obstacles it will change direction.
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
 #include <stdlib.h>
@@ -19,13 +19,7 @@ public:
 };
 
 int Listener::getCollision(const sensor_msgs::LaserScan msg, float distance) // return collision angle
-{
-   // 1 sample == 1 degree
-
-   // int window = msg.ranges.size() / 4;
-   
-   // int middle = msg.ranges.size() / 2;
-   
+{   
    for (int i = 0; i < msg.ranges.size(); i++)
    {
       if (msg.ranges[i] < distance && msg.ranges[i] > 0.2)
@@ -49,10 +43,11 @@ void Listener::subCallback(const sensor_msgs::LaserScan msg)
       state.velocity = 100;
       state.angle = prev_angle;
    }
-   else
+   else // collision
    {
       state.velocity = 100;
 
+      // change direction
       int random = -10 + (rand() % 11);
       float newDir = (float)collisionAng + random;
       if (newDir > 180 || newDir < -180)
@@ -62,7 +57,7 @@ void Listener::subCallback(const sensor_msgs::LaserScan msg)
    }
    prev_angle = state.angle;
    ROS_INFO("%f", prev_angle);
-   state.rotate = false;
+   state.conf = 0;
    pub.publish(state);
 }
 

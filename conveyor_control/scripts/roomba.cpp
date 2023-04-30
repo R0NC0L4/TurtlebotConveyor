@@ -1,4 +1,4 @@
-// This program makes the robot move forward. If the robot sees an obstacles it will change direction.
+// DEPRECATED
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
 #include <stdlib.h>
@@ -56,7 +56,7 @@ void Listener::subCallback(const sensor_msgs::LaserScan msg)
          // ROS_INFO("Collision. ANGLE: %f", state.angle);
       }
       prev_angle = state.angle;
-      state.rotate = false;
+      state.conf = 0;
       pub.publish(state);
    }
 }

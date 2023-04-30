@@ -32,7 +32,7 @@
 
     <!-- Algorithm -->
     <node name="algorithm" pkg="conveyor_control" type="roam" output="screen" />
-    <node name="model_mapping" pkg="conveyor_description_pkg" type="mapping" />
+    <node name="model_mapping" pkg="conveyor_description_pkg" type="mapping" output="screen" />
     <node name="control2gazebo" pkg="conveyor_control" type="control2gazebo" />
 
     <!-- ros_control conveyor launch file -->

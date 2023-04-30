@@ -13,10 +13,15 @@ float last_angle = 0;
 
 void subCallback(const conveyor_description_pkg::desired_conf msg)
 {
+  float ang_vel, vl, vr, ang, r, phi, phi_l, phi_r;
+  float l = 0.255; // cm
+  float w = l;     // cm
   conveyor_description_pkg::conveyor_state state;
   float vlc = msg.velocity;
-  if (msg.rotate == false)
+  switch (msg.conf)
   {
+  case 0: // OMNI
+
     if (msg.angle >= -180 && msg.angle <= 180)
     {
       if ((msg.angle < 45 && msg.angle > -45) || ((msg.angle == 45 && last_angle <= 45) || (msg.angle == -45 && last_angle >= -45)))
@@ -89,24 +94,95 @@ void subCallback(const conveyor_description_pkg::desired_conf msg)
         state.joint_lf = ang - 45;
         state.joint_rf = ang + 45;
       }
-
-      last_angle = msg.angle;
     }
-  }
-  else
-  {
-    float ang = 180;
 
-    state.wheel_lr = vlc;
+    break;
+
+  case 1: // differential |||| NOT WORKING ||||
+
+    state.joint_lr = 135;
+    state.joint_rr = 225;
+    state.joint_lf = 225;
+    state.joint_rf = 135;
+
+    ang_vel = msg.angular_velocity;
+
+    vr = (vlc + ang_vel * 0.255 / 2); // / 0.03;
+    vl = (vlc - ang_vel * 0.255 / 2); // / 0.03;
+
+    state.wheel_lr = -vl;
+    state.wheel_rr = vr;
+    state.wheel_lf = -vl;
+    state.wheel_rf = vr;
+
+    break;
+
+  case 2: // ackerman
+
+    state.joint_lr = 135;
+    state.joint_rr = 225;
+
+    phi = msg.angle;
+
+    if (phi > -2 && phi < 2)
+    {
+      state.joint_lf = 225;
+      state.joint_rf = 135;
+    }
+    else if ((msg.angle < 45 && msg.angle > -45) || ((msg.angle == 45 && last_angle <= 45) || (msg.angle == -45 && last_angle >= -45)))
+    {
+      // ang = msg.angle + 180;
+
+      r = l / tan(phi * M_PI / 180.0);
+
+      phi_l = (atan(l / (r - w / 2)) * 180 / M_PI) + 180;
+      phi_r = (atan(l / (r + w / 2)) * 180 / M_PI) + 180;
+      ROS_INFO("----------");
+      ROS_INFO("left: %f", phi_l);
+      ROS_INFO("right: %f", phi_r);
+      ROS_INFO("----------");
+
+      state.joint_lf = phi_l + 45;
+      state.joint_rf = phi_r - 45;
+    }
+
+    state.wheel_lr = -vlc;
     state.wheel_rr = vlc;
-    state.wheel_lf = vlc;
+    state.wheel_lf = -vlc;
     state.wheel_rf = vlc;
+
+    break;
+
+  case 3:
+
+    ang = 180;
+    ang_vel = msg.angular_velocity;
+
+    state.wheel_lr = ang_vel;
+    state.wheel_rr = ang_vel;
+    state.wheel_lf = ang_vel;
+    state.wheel_rf = ang_vel;
 
     state.joint_lr = ang;
     state.joint_rr = ang;
     state.joint_lf = ang;
     state.joint_rf = ang;
+
+    break;
+
+  default:
+    state.joint_lr = 0;
+    state.joint_rr = 0;
+    state.joint_lf = 0;
+    state.joint_rf = 0;
+    state.wheel_lr = 0;
+    state.wheel_rr = 0;
+    state.wheel_lf = 0;
+    state.wheel_rf = 0;
+    break;
   }
+
+  last_angle = msg.angle;
 
   // Publish the message.
   pub.publish(state);

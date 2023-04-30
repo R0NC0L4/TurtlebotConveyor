@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
       state.velocity = 20;
       state.angle = i;
-      state.rotate = false;
+      state.conf = 0;
 
       pub.publish(state);
 
