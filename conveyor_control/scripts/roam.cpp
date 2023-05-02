@@ -19,26 +19,28 @@ public:
 };
 
 int Listener::getCollision(const sensor_msgs::LaserScan msg, float distance) // return collision angle
-{   
-   for (int i = 0; i < msg.ranges.size(); i++)
+{
+   // ROS_INFO("%ld", msg.ranges.size());
+   int dim = msg.ranges.size();
+   for (int i = 0; i < dim; i++)
    {
-      if (msg.ranges[i] < distance && msg.ranges[i] > 0.2)
+      if (msg.ranges[i] < distance && msg.ranges[i] > 0.15)
       {
-         ROS_INFO("%d", i);
-         return i; // return collision angle
+         return i * 360 / dim; // return collision angle
       }
    }
-   ROS_INFO("%d", 255);
-   return 255; // out of range value (no collision)
+   // ROS_INFO("%d", 255);
+   return 2555; // out of range value (no collision)
 }
 
 void Listener::subCallback(const sensor_msgs::LaserScan msg)
 {
-   int collisionAng = getCollision(msg, 0.5);
+   int collisionAng = getCollision(msg, 0.3);
+   ROS_INFO("%d", collisionAng);
 
    conveyor_description_pkg::desired_conf state;
 
-   if (collisionAng == 255) // no collsion
+   if (collisionAng == 2555) // no collsion
    {
       state.velocity = 100;
       state.angle = prev_angle;
@@ -48,15 +50,17 @@ void Listener::subCallback(const sensor_msgs::LaserScan msg)
       state.velocity = 100;
 
       // change direction
-      int random = -10 + (rand() % 11);
+      int random = -10 + (rand() % 21);
       float newDir = (float)collisionAng + random;
-      if (newDir > 180 || newDir < -180)
-         newDir = 180;
-
+      if (newDir > 180)
+         newDir = newDir - 360;
+      if (newDir < -180)
+         newDir = -180;
+      ROS_INFO("-->%f", newDir);
       state.angle = newDir;
    }
    prev_angle = state.angle;
-   ROS_INFO("%f", prev_angle);
+   // ROS_INFO("%f", prev_angle);
    state.conf = 0;
    pub.publish(state);
 }

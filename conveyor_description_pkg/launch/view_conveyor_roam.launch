@@ -12,7 +12,7 @@
 
 
   <!-- Algorithm -->
-  <node name="algorithm" pkg="conveyor_control" type="roomba" />
+  <node name="algorithm" pkg="conveyor_control" type="roam" output="screen" />
   <node name="model_mapping" pkg="conveyor_description_pkg" type="mapping" />
 
   <!-- <node name="arduino2rviz" pkg="conveyor_description_pkg" type="arduino2rviz" /> -->
