@@ -7,7 +7,7 @@
 
   <node pkg="ld08_driver" type="ld08_driver" name="turtlebot3_lds" output="screen">
     <param name="port" value="/dev/ttyUSB0" />
-    <param name="frame_id" value="laser" />
+    <param name="frame_id" value="hokuyo_joint" />
   </node>
 
 
@@ -20,13 +20,14 @@
     <param name="port" type="string" value="/dev/ttyACM0" />
     <param name="baud" type="int" value="1000000" />
   </node>
-
-  <!-- <node name="joint_state_publisher" type="joint_state_publisher" pkg="joint_state_publisher"
+<!-- 
+  <node name="joint_state_publisher" type="joint_state_publisher" pkg="joint_state_publisher"
     output="screen">
     <rosparam param="source_list">[to_joint_states]</rosparam>
-  </node> -->
+  </node> 
+  
 
-  <!-- <node name="rviz" pkg="rviz" type="rviz"
+  <node name="rviz" pkg="rviz" type="rviz"
     args="-d $(find conveyor_description_pkg)/urdf/conveyor.rviz" required="true" /> -->
 
 

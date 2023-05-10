@@ -25,3 +25,4 @@ include_directories(
 
 add_executable(f710_teleop_joy src/joy_node.cpp)
 target_link_libraries(f710_teleop_joy ${catkin_LIBRARIES})
+# add_dependencies(f710_teleop_joy conveyor_description_pkg_generate_messasges_cpp)

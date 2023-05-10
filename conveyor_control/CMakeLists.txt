@@ -142,15 +142,19 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/conveyor_control_node.cpp)
 add_executable(control2gazebo scripts/control2gazebo.cpp)
 target_link_libraries(control2gazebo ${catkin_LIBRARIES})
+# add_dependencies(control2gazebo conveyor_description_pkg_generate_messasges_cpp)
 
 add_executable(roam scripts/roam.cpp)
 target_link_libraries(roam ${catkin_LIBRARIES})
+# add_dependencies(roam conveyor_description_pkg_generate_messasges_cpp)
 
 add_executable(directions scripts/directions.cpp)
 target_link_libraries(directions ${catkin_LIBRARIES})
+# add_dependencies(directions conveyor_description_pkg_generate_messasges_cpp)
 
 add_executable(roomba scripts/roomba.cpp)
 target_link_libraries(roomba ${catkin_LIBRARIES})
+# add_dependencies(roomba conveyor_description_pkg_generate_messasges_cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

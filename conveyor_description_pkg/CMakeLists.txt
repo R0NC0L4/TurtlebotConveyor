@@ -144,18 +144,23 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/conveyor_description_pkg_node.cpp)
 add_executable(joint_init scripts/joint_init.cpp)
 target_link_libraries(joint_init ${catkin_LIBRARIES})
+# add_dependencies(joint_init conveyor_description_pkg_generate_messages_cpp)
 
 add_executable(keyboard scripts/keyboard.cpp)
 target_link_libraries(keyboard ${catkin_LIBRARIES})
+# add_dependencies(keyboard conveyor_description_pkg_generate_messasges_cpp)
 
 add_executable(joystick scripts/joystick.cpp)
 target_link_libraries(joystick ${catkin_LIBRARIES})
+# add_dependencies(joystick conveyor_description_pkg_generate_messasges_cpp)
 
 add_executable(arduino2rviz scripts/arduino2rviz.cpp)
 target_link_libraries(arduino2rviz ${catkin_LIBRARIES})
+# add_dependencies(arduino2rviz conveyor_description_pkg_generate_messasges_cpp)
 
 add_executable(mapping scripts/mapping.cpp)
 target_link_libraries(mapping ${catkin_LIBRARIES})
+# add_dependencies(mapping conveyor_description_pkg_generate_messasges_cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
