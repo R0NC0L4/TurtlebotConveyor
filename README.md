@@ -509,6 +509,58 @@ To ensure everything is functioning properly, launch the terminal window and ent
 roslaunch ld08_driver ld08.launch
 ```
 
+# Raspberry
+
+Finally, it is possible to remotely control the robot using a Raspberry Pi 4. The first step is to install the operating system on the Raspberry, using this [guide](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/):
+
+Follow chapters 
+
+- 3.2 Configuring the SBC
+
+- 3.2.2 Downloading the image (Raspberry Pi 4B)
+
+- 3.2.3 Unzip the file
+
+- 3.2.4.1 Burn the image file (Raspberry Pi Imager)
+
+- 3.2.5 Resizing the partition (GParted GUI tool)
+
+Remembering to select Noetic as the distribution. The next step is to insert the micoSD into the Raspberry and boot it. To change the connection, just change the SSID and password in /netplan/50-cloud-init.yaml.
+
+Now we are ready to connect to the device. To do this, we use the following command.
+
+```
+ssh ubuntu@RaspberryIP 
+```
+
+where RaspberryIP is the IP of the Raspberry.
+
+It is possible to get the files to the Raspberry by downloading the repo directly to the device or by transferring it via SSH or USB.  To use SSH, use the following command:
+
+```
+scp -r directory/in/my/pc ubuntu@RaspberryIP:catkin_ws/src
+```
+
+After running catkin_make in catkin_ws on the Raspberry, we can use the scripts remotely.
+
+To use any launch file or script remotely on raspberry, we must follow these steps on our pc:
+
+1. Connect via SSH to the Raspberry
+   
+   ```
+   ssh ubuntu@RaspberryIP 
+   ```
+
+2. Open another terminal and launch a roscore
+   
+   ```
+   roscore
+   ```
+
+3. We can run any of the .launch files described above in the window we are connected to via ssh.
+
+To make sure everything is working properly, in addition to observing the robot, we can run *rostopic list* or *rqt_graph* to see that all topics and nodes have been created correctly.
+
 # Useful Links
 
 - [ROBOTIS e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/locomotion/#turtlebot3-friends-conveyor) for Conveyor
