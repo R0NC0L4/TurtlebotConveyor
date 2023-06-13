@@ -557,7 +557,11 @@ To use any launch file or script remotely on raspberry, we must follow these ste
    roscore
    ```
 
-3. We can run any of the .launch files described above in the window we are connected to via ssh.
+3. We can run any of the .launch files described above in the window we are connected to via ssh, such as:
+   
+   ```
+   roslaunch conveyor_description_pkg view_conveyor_roam.launch
+   ```
 
 To make sure everything is working properly, in addition to observing the robot, we can run *rostopic list* or *rqt_graph* to see that all topics and nodes have been created correctly.
 
