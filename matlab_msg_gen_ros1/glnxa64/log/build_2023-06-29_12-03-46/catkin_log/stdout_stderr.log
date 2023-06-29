@@ -1,0 +1,211 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CATKIN_DEVEL_PREFIX: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel
+-- Using CMAKE_PREFIX_PATH: /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1;/usr/local/MATLAB/R2022b/toolbox/ros/mlroscpp/custom_messages
+-- This workspace overlays: /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1;/usr/local/MATLAB/R2022b/toolbox/ros/mlroscpp/custom_messages
+-- Found PythonInterp: /home/andre/.matlab/R2022b/ros1/glnxa64/venv/bin/python3 (found suitable version "3.9.5", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /home/andre/.matlab/R2022b/ros1/glnxa64/venv/bin/python3
+-- Using Debian Python package layout
+-- Found PY_em: /home/andre/.matlab/R2022b/ros1/glnxa64/venv/lib/python3.9/site-packages/em.py  
+-- Using empy: /home/andre/.matlab/R2022b/ros1/glnxa64/venv/lib/python3.9/site-packages/em.py
+-- Using CATKIN_ENABLE_TESTING: off
+-- catkin 0.8.10
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 1 packages in topological order:
+-- ~~  - conveyor_description_pkg
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'conveyor_description_pkg'
+-- ==> add_subdirectory(conveyor_description_pkg)
+CMake Warning at /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/genmsg-extras.cmake:49 (message):
+  Unknown message generator specified in ROS_LANG_DISABLE: geneus
+Call Stack (most recent call first):
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/genmsgConfig.cmake:222 (include)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/gencpp/cmake/gencppConfig.cmake:197 (find_package)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/message_generation/cmake/message_generationConfig.cmake:197 (find_package)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  conveyor_description_pkg/CMakeLists.txt:20 (find_package)
+
+
+CMake Warning at /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/genmsg-extras.cmake:49 (message):
+  Unknown message generator specified in ROS_LANG_DISABLE: genlisp
+Call Stack (most recent call first):
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/genmsgConfig.cmake:222 (include)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/gencpp/cmake/gencppConfig.cmake:197 (find_package)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/message_generation/cmake/message_generationConfig.cmake:197 (find_package)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  conveyor_description_pkg/CMakeLists.txt:20 (find_package)
+
+
+CMake Warning at /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/genmsg-extras.cmake:49 (message):
+  Unknown message generator specified in ROS_LANG_DISABLE: gennodejs
+Call Stack (most recent call first):
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/genmsgConfig.cmake:222 (include)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/gencpp/cmake/gencppConfig.cmake:197 (find_package)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/message_generation/cmake/message_generationConfig.cmake:197 (find_package)
+  /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  conveyor_description_pkg/CMakeLists.txt:20 (find_package)
+
+
+-- Using these message generators: gencpp;genpy
+-- conveyor_description_pkg: 3 messages, 0 services
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    Boost_NAMESPACE
+
+
+-- Build files have been written to: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build
+[1/15] cd /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build/conveyor_description_pkg && /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/andre/.matlab/R2022b/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py conveyor_description_pkg /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/msg/conveyor_state.msg
+[2/15] cd /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build/conveyor_description_pkg && /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/andre/.matlab/R2022b/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py conveyor_description_pkg /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/msg/desired_conf.msg
+[3/15] cd /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build/conveyor_description_pkg && /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/andre/.matlab/R2022b/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py conveyor_description_pkg /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/msg/buttons.msg
+[4/15] Generating Python from MSG conveyor_description_pkg/buttons
+[5/15] Generating Python from MSG conveyor_description_pkg/conveyor_state
+[6/15] Generating Python from MSG conveyor_description_pkg/desired_conf
+[7/15] Generating C++ code from conveyor_description_pkg/buttons.msg
+[8/15] Generating C++ code from conveyor_description_pkg/desired_conf.msg
+[9/15] Generating C++ code from conveyor_description_pkg/conveyor_state.msg
+[10/15] Generating Python msg __init__.py for conveyor_description_pkg
+[11/15] Building CXX object conveyor_description_pkg/CMakeFiles/conveyor_description_pkg_matlab.dir/src/conveyor_description_pkg_buttons_message.cpp.o
+In file included from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/src/conveyor_description_pkg_buttons_message.cpp:3:
+/usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[12/15] Building CXX object conveyor_description_pkg/CMakeFiles/conveyor_description_pkg_matlab.dir/src/conveyor_description_pkg_desired_conf_message.cpp.o
+In file included from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/src/conveyor_description_pkg_desired_conf_message.cpp:3:
+/usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[13/15] Building CXX object conveyor_description_pkg/CMakeFiles/conveyor_description_pkg_matlab.dir/src/conveyor_description_pkg_conveyor_state_message.cpp.o
+In file included from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/src/conveyor_description_pkg_conveyor_state_message.cpp:3:
+/usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[14/15] Linking CXX shared library /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/libconveyor_description_pkg_matlab.so
+[14/15] Install the project...
+-- Install configuration: "Release"
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/_setup_util.py
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/env.sh
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/setup.bash
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/local_setup.bash
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/setup.sh
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/local_setup.sh
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/setup.zsh
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/local_setup.zsh
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/.rosinstall
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/msg/buttons.msg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/msg/conveyor_state.msg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/msg/desired_conf.msg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/cmake/conveyor_description_pkg-msg-paths.cmake
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/include/conveyor_description_pkg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/include/conveyor_description_pkg/conveyor_state.h
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/include/conveyor_description_pkg/desired_conf.h
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/include/conveyor_description_pkg/buttons.h
+Listing '/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/conveyor_description_pkg'...
+Compiling '/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/conveyor_description_pkg/__init__.py'...
+Listing '/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/conveyor_description_pkg/msg'...
+Compiling '/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/conveyor_description_pkg/msg/__init__.py'...
+Compiling '/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/conveyor_description_pkg/msg/_buttons.py'...
+Compiling '/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/conveyor_description_pkg/msg/_conveyor_state.py'...
+Compiling '/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/conveyor_description_pkg/msg/_desired_conf.py'...
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/_desired_conf.py
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/__pycache__
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/__pycache__/_buttons.cpython-39.pyc
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/__pycache__/_desired_conf.cpython-39.pyc
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/__pycache__/_conveyor_state.cpython-39.pyc
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/__pycache__/__init__.cpython-39.pyc
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/_buttons.py
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/_conveyor_state.py
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/msg/__init__.py
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/__pycache__
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/__pycache__/__init__.cpython-39.pyc
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/conveyor_description_pkg/__init__.py
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/pkgconfig/conveyor_description_pkg.pc
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/cmake/conveyor_description_pkg-msg-extras.cmake
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/cmake/conveyor_description_pkgConfig.cmake
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/cmake/conveyor_description_pkgConfig-version.cmake
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/share/conveyor_description_pkg/package.xml
+-- Up-to-date: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/include
+-- Up-to-date: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/include/conveyor_description_pkg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/include/conveyor_description_pkg/visibility_control.h
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/lib/libconveyor_description_pkg_matlab.so
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m/
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+conveyor_description_pkg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+conveyor_description_pkg/desired_conf.m
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+conveyor_description_pkg/buttons.m
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+conveyor_description_pkg/conveyor_state.m
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+conveyor_description_pkg
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+conveyor_description_pkg/desired_conf.m
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+conveyor_description_pkg/buttons.m
+-- Installing: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+conveyor_description_pkg/conveyor_state.m
+Base path: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64
+Source space: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src
+Build space: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build
+Devel space: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel
+Install space: /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install
+Creating symlink "/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/CMakeLists.txt" pointing to "/usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1/share/catkin/cmake/toplevel.cmake"
+####
+#### Running command: "cmake /home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src -DALIAS_ROS1_CLASS_LOADER=1 -DBoost_NAMESPACE=mwboost -DCATKIN_ENABLE_TESTING=off -DCMAKE_PREFIX_PATH=/usr/local/MATLAB/R2022b/sys/ros1/glnxa64/ros1;/usr/local/MATLAB/R2022b/toolbox/ros/mlroscpp/custom_messages -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS_RELEASE=-O0 -DCATKIN_DEVEL_PREFIX=/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/devel -DCMAKE_INSTALL_PREFIX=/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/install -G Ninja" in "/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build"
+####
+####
+#### Running command: "ninja install install -j20 -l20" in "/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/build"
+####

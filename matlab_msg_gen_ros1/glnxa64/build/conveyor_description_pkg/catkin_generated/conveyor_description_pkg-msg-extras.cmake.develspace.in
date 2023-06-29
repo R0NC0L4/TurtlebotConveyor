@@ -1,0 +1,2 @@
+set(conveyor_description_pkg_MESSAGE_FILES "/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/msg/buttons.msg;/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/msg/conveyor_state.msg;/home/andre/catkin_ws/src/TurtlebotConveyor/matlab_msg_gen_ros1/glnxa64/src/conveyor_description_pkg/msg/desired_conf.msg")
+set(conveyor_description_pkg_SERVICE_FILES "")
