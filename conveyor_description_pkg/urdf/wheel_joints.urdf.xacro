@@ -189,8 +189,8 @@
     <gazebo reference="servo_${front}_${right}_link">
       <selfCollide>false</selfCollide>
       <turnGravityOff>false</turnGravityOff>
-      <mu1>0.2</mu1>
-      <mu2>0.2</mu2>
+      <mu1>1</mu1> <!-- 0.2 -->
+      <mu2>1</mu2>
     </gazebo>
 
     <!-- Servo transmission -->

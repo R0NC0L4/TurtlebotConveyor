@@ -10,6 +10,9 @@
 ros::Publisher pub;
 
 float last_angle = 0;
+int changed = 0;
+int count = 0; // stop wheel for tn when changing configuration (omni)
+int tn = 10; 
 
 void subCallback(const conveyor_description_pkg::desired_conf msg)
 {
@@ -33,6 +36,25 @@ void subCallback(const conveyor_description_pkg::desired_conf msg)
         state.wheel_lf = -vlc;
         state.wheel_rf = vlc;
 
+        if (!(last_angle < 45 && last_angle > -45) )
+        {
+          changed = 1;
+        }
+
+        if (changed == 1) 
+        {
+          state.wheel_lr = 0;
+          state.wheel_rr = 0;
+          state.wheel_lf = 0;
+          state.wheel_rf = 0;
+          count = count+1;
+          if (count > tn)
+          {
+            count = 0;
+            changed = 0;
+          }
+        }
+
         state.joint_lr = ang - 45;
         state.joint_rr = ang + 45;
         state.joint_lf = ang + 45;
@@ -46,6 +68,25 @@ void subCallback(const conveyor_description_pkg::desired_conf msg)
         state.wheel_rr = -vlc;
         state.wheel_lf = vlc;
         state.wheel_rf = vlc;
+
+        if (!(last_angle < 135 && last_angle > 45) )
+        {
+          changed = 1;
+        }
+        
+        if (changed == 1) 
+        {
+          state.wheel_lr = 0;
+          state.wheel_rr = 0;
+          state.wheel_lf = 0;
+          state.wheel_rf = 0;
+          count = count+1;
+          if (count > tn)
+          {
+            count = 0;
+            changed = 0;
+          }
+        }
 
         state.joint_lr = ang + 45;
         state.joint_rr = ang - 45;
@@ -61,6 +102,25 @@ void subCallback(const conveyor_description_pkg::desired_conf msg)
         state.wheel_lf = vlc;
         state.wheel_rf = -vlc;
 
+        if (!(last_angle > 135 && last_angle < 180) )
+        {
+          changed = 1;
+        }
+        
+        if (changed == 1) 
+        {
+          state.wheel_lr = 0;
+          state.wheel_rr = 0;
+          state.wheel_lf = 0;
+          state.wheel_rf = 0;
+          count = count+1;
+          if (count > tn)
+          {
+            count = 0;
+            changed = 0;
+          }
+        }
+
         state.joint_lr = ang - 45;
         state.joint_rr = ang + 45;
         state.joint_lf = ang + 45;
@@ -75,6 +135,25 @@ void subCallback(const conveyor_description_pkg::desired_conf msg)
         state.wheel_lf = vlc;
         state.wheel_rf = -vlc;
 
+        if (!(last_angle > -180 && last_angle < -135) )
+        {
+          changed = 1;
+        }
+        
+        if (changed == 1) 
+        {
+          state.wheel_lr = 0;
+          state.wheel_rr = 0;
+          state.wheel_lf = 0;
+          state.wheel_rf = 0;
+          count = count+1;
+          if (count > tn)
+          {
+            count = 0;
+            changed = 0;
+          }
+        }
+
         state.joint_lr = ang - 45;
         state.joint_rr = ang + 45;
         state.joint_lf = ang + 45;
@@ -88,6 +167,25 @@ void subCallback(const conveyor_description_pkg::desired_conf msg)
         state.wheel_rr = vlc;
         state.wheel_lf = -vlc;
         state.wheel_rf = -vlc;
+
+        if (!(last_angle > -135 && last_angle < -45) )
+        {
+          changed = 1;
+        }
+        
+        if (changed == 1) 
+        {
+          state.wheel_lr = 0;
+          state.wheel_rr = 0;
+          state.wheel_lf = 0;
+          state.wheel_rf = 0;
+          count = count+1;
+          if (count > tn)
+          {
+            count = 0;
+            changed = 0;
+          }
+        }
 
         state.joint_lr = ang + 45;
         state.joint_rr = ang - 45;

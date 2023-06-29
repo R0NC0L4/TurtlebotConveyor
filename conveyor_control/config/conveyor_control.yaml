@@ -99,9 +99,9 @@ conveyor:
     front_right_wheel_joint:
       has_position_limits: false
       has_velocity_limits: true
-      max_velocity: 5.0
+      max_velocity: 50.0
       has_acceleration_limits: true
-      max_acceleration: 5.0
+      max_acceleration: 15.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -109,9 +109,9 @@ conveyor:
     front_left_wheel_joint:
       has_position_limits: false
       has_velocity_limits: true
-      max_velocity: 5.0
+      max_velocity: 50.0
       has_acceleration_limits: true
-      max_acceleration: 5.0
+      max_acceleration: 15.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -119,9 +119,9 @@ conveyor:
     back_right_wheel_joint:
       has_position_limits: false
       has_velocity_limits: true
-      max_velocity: 5.0
+      max_velocity: 50.0
       has_acceleration_limits: true
-      max_acceleration: 5.0
+      max_acceleration: 15.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
@@ -129,9 +129,9 @@ conveyor:
     back_left_wheel_joint:
       has_position_limits: false
       has_velocity_limits: true
-      max_velocity: 5.0
+      max_velocity: 50.0
       has_acceleration_limits: true
-      max_acceleration: 5.0
+      max_acceleration: 15.0
       has_jerk_limits: true
       max_jerk: 100.0
       has_effort_limits: true
