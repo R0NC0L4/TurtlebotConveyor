@@ -144,6 +144,10 @@ add_executable(control2gazebo scripts/control2gazebo.cpp)
 target_link_libraries(control2gazebo ${catkin_LIBRARIES})
 # add_dependencies(control2gazebo conveyor_description_pkg_generate_messasges_cpp)
 
+add_executable(control2gazebo_multi scripts/control2gazebo_multi.cpp)
+target_link_libraries(control2gazebo_multi ${catkin_LIBRARIES})
+# add_dependencies(control2gazebo_multi conveyor_description_pkg_generate_messasges_cpp)
+
 add_executable(roam scripts/roam.cpp)
 target_link_libraries(roam ${catkin_LIBRARIES})
 # add_dependencies(roam conveyor_description_pkg_generate_messasges_cpp)

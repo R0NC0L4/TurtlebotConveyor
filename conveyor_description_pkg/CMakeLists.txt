@@ -162,6 +162,10 @@ add_executable(mapping scripts/mapping.cpp)
 target_link_libraries(mapping ${catkin_LIBRARIES})
 # add_dependencies(mapping conveyor_description_pkg_generate_messasges_cpp)
 
+add_executable(mapping_multi scripts/mapping_multi.cpp)
+target_link_libraries(mapping_multi ${catkin_LIBRARIES})
+# add_dependencies(mapping_multi conveyor_description_pkg_generate_messasges_cpp)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
