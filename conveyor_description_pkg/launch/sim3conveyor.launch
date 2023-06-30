@@ -26,7 +26,7 @@
     <param name="robot_description"
         command="$(find xacro)/xacro --inorder '$(find conveyor_description_pkg)/urdf/conveyor_multi.xacro'" />
 
-    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot 1 -->
     <group ns="/robot1">
         <param name="tf_prefix" value="conveyor1" />
         <rosparam file="$(find conveyor_control)/config/conveyor_control_multi.yaml" command="load"
@@ -78,7 +78,7 @@
 
     </group>
 
-    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot 2 -->
     <group ns="/robot2">
         <param name="tf_prefix" value="conveyor2" />
         <rosparam file="$(find conveyor_control)/config/conveyor_control_multi.yaml" command="load"
@@ -124,7 +124,7 @@
 
     </group>
 
-    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+    <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot 3 -->
     <group ns="/robot3">
         <param name="tf_prefix" value="conveyor2" />
         <rosparam file="$(find conveyor_control)/config/conveyor_control_multi.yaml" command="load"
