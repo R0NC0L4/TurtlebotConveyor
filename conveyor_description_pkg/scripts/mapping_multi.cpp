@@ -12,7 +12,7 @@ ros::Publisher pub;
 float last_angle = 0;
 int changed = 0;
 int count = 0; // stop wheel for tn when changing configuration (omni)
-int tn = 10; 
+int tn = 1; 
 
 void subCallback(const conveyor_description_pkg::desired_conf msg)
 {
