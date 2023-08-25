@@ -87,7 +87,7 @@
             command="$(find xacro)/xacro --inorder '$(find conveyor_description_pkg)/urdf/conveyor_multi.xacro'" />
 
         <node name="urdf_spawner_2" pkg="gazebo_ros" type="spawn_model"
-            args="-x -3 -y 1.4 -z 1 -unpause -urdf -model robot2 -param robot_description "
+            args="-x -3 -y 2.2 -z 1 -unpause -urdf -model robot2 -param robot_description "
             respawn="false"
             output="screen">
         </node>
@@ -133,7 +133,7 @@
             command="$(find xacro)/xacro --inorder '$(find conveyor_description_pkg)/urdf/conveyor_multi.xacro'" />
 
         <node name="urdf_spawner_2" pkg="gazebo_ros" type="spawn_model"
-            args="-x -3 -y -1.4 -z 1 -unpause -urdf -model robot3 -param robot_description "
+            args="-x -3 -y -2.2 -z 1 -unpause -urdf -model robot3 -param robot_description "
             respawn="false"
             output="screen">
         </node>
