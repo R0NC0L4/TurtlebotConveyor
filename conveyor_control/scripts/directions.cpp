@@ -10,7 +10,7 @@ ros::Publisher pub;
 int main(int argc, char **argv)
 {
    // Initialize the ROS system and become a node.
-   ros::init(argc, argv, "algorithm");
+   ros::init(argc, argv, "algorithm_directions");
    ros::NodeHandle nh;
 
    // Create a publisher object.
