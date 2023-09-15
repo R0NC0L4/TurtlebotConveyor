@@ -6,6 +6,7 @@
 #include <sensor_msgs/LaserScan.h>
 
 ros::Publisher pub;
+// ros::Publisher pub2;
 
 int main(int argc, char **argv)
 {
@@ -15,6 +16,8 @@ int main(int argc, char **argv)
 
    // Create a publisher object.
    pub = nh.advertise<conveyor_description_pkg::desired_conf>("desired_configuration", 1000);
+   // pub = nh.advertise<conveyor_description_pkg::desired_conf>("robot1/desired_configuration", 1000);
+   // pub2 = nh.advertise<conveyor_description_pkg::desired_conf>("robot2/desired_configuration", 1000);
 
    ros::Rate rate(10);
 
@@ -29,6 +32,7 @@ int main(int argc, char **argv)
       state.conf = 0;
 
       pub.publish(state);
+      // pub2.publish(state);
 
       if (rot==0)
          i = i + 1;
