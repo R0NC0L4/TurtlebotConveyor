@@ -1,0 +1,45 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/andre/canopies_ws/devel/include/**",
+        "/home/andre/catkin_ws/devel/include/**",
+        "/home/andre/UnitySimulator/canopies_vr_simulator-3.0/CanopiesSimulatorROS/workspace/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/andre/catkin_ws/src/racecar/ackermann_cmd_mux/include/**",
+        "/home/andre/canopies_ws/src/alitrak_robot-main/alitrak_hw_interface/include/**",
+        "/home/andre/canopies_ws/src/rm3_navigation_stack/alitrak_remapping/include/**",
+        "/home/andre/catkin_ws/src/ros_astra_camera/include/**",
+        "/home/andre/catkin_ws/src/beginner_tutorials/include/**",
+        "/home/andre/canopies_ws/src/controller_manager/include/**",
+        "/home/andre/catkin_ws/src/lab1/include/**",
+        "/home/andre/catkin_ws/src/ld08_driver/include/**",
+        "/home/andre/catkin_ws/src/logistic_unity/include/**",
+        "/home/andre/catkin_ws/src/mario/include/**",
+        "/home/andre/catkin_ws/src/mav_comm/mav_msgs/include/**",
+        "/home/andre/catkin_ws/src/mav_comm/mav_planning_msgs/include/**",
+        "/home/andre/catkin_ws/src/my_robot_description_pkg/include/**",
+        "/home/andre/canopies_ws/src/ouster-ros/include/**",
+        "/home/andre/catkin_ws/src/prova_pub_sub/include/**",
+        "/home/andre/catkin_ws/src/robot_localization/include/**",
+        "/home/andre/catkin_ws/src/rotors_simulator/rotors_control/include/**",
+        "/home/andre/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/include/**",
+        "/home/andre/catkin_ws/src/rotors_simulator/rotors_hil_interface/include/**",
+        "/home/andre/catkin_ws/src/rotors_simulator/rotors_joy_interface/include/**",
+        "/home/andre/UnitySimulator/canopies_vr_simulator-3.0/CanopiesSimulatorROS/workspace/src/sbg_ros_driver/include/**",
+        "/home/andre/catkin_ws/src/vrpn_client_ros/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

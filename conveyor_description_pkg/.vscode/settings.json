@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/andre/UnitySimulator/canopies_vr_simulator-3.0/CanopiesSimulatorROS/workspace/devel/lib/python3/dist-packages",
+        "/home/andre/canopies_ws/devel/lib/python3/dist-packages",
+        "/home/andre/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/andre/mixcell/source_code"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/andre/UnitySimulator/canopies_vr_simulator-3.0/CanopiesSimulatorROS/workspace/devel/lib/python3/dist-packages",
+        "/home/andre/canopies_ws/devel/lib/python3/dist-packages",
+        "/home/andre/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/andre/mixcell/source_code"
+    ]
+}
