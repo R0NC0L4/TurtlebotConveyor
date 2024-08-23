@@ -150,6 +150,9 @@ add_executable(keyboard scripts/keyboard.cpp)
 target_link_libraries(keyboard ${catkin_LIBRARIES})
 # add_dependencies(keyboard conveyor_description_pkg_generate_messasges_cpp)
 
+add_executable(keyboard_gazebo scripts/keyboard_gazebo.cpp)
+target_link_libraries(keyboard_gazebo ${catkin_LIBRARIES})
+
 add_executable(joystick scripts/joystick.cpp)
 target_link_libraries(joystick ${catkin_LIBRARIES})
 # add_dependencies(joystick conveyor_description_pkg_generate_messasges_cpp)
