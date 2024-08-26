@@ -27,7 +27,7 @@ int main(int argc, char **argv)
    {
       conveyor_description_pkg::desired_conf state;
 
-      state.velocity = 20;
+      state.velocity = 5;
       state.angle = i;
       state.conf = 0;
 

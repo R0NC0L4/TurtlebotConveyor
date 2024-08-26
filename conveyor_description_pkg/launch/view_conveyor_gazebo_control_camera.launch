@@ -29,7 +29,7 @@
     <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" /> -->
     
     <!-- ros_control conveyor launch file -->
-    <include file="$(find conveyor_control)/launch/conveyor_control.launch" />
+    <include file="$(find conveyor_control)/launch/conveyor_control_camera.launch" />
 
     <!-- Algorithm -->
     <node name="model_mapping" pkg="conveyor_description_pkg" type="mapping" output="screen" />

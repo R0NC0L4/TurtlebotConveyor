@@ -114,7 +114,7 @@
 
 
     <!-- Camera -->
-
+    <xacro:camera base_link="base_link"/>
     
 
     <gazebo>
