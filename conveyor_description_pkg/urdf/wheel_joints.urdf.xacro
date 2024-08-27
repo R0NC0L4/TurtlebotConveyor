@@ -75,7 +75,7 @@
           <ode>
             <soft_cfm>0.0</soft_cfm>
             <soft_erp>0.2</soft_erp>
-            <kp>100000.0</kp>
+            <kp>1000000000000.0</kp>
             <kd>1.0</kd>
             <max_vel>100.0</max_vel>
             <min_depth>0.001</min_depth>
@@ -182,15 +182,38 @@
       <child link="servo_${front}_${right}_link" />
       <origin xyz="${axisX * base_length/2}  ${axisY *base_length/2} 0" rpy="0 0 ${angle}" />
       <axis xyz="0 0 1" rpy="0 0 0" />
-      <limit effort="100" velocity="100" lower="${1/2*M_PI}" upper="${3/2*M_PI}" />
+      <limit effort="500" velocity="500" lower="${1/2*M_PI}" upper="${3/2*M_PI}" />
       <dynamics damping="0" friction="0" />
     </joint>
 
     <gazebo reference="servo_${front}_${right}_link">
       <selfCollide>false</selfCollide>
       <turnGravityOff>false</turnGravityOff>
-      <mu1>1</mu1> <!-- 0.2 -->
-      <mu2>1</mu2>
+      <surface>
+        <friction>
+          <ode>
+            <mu>1.01</mu>
+            <mu2>1.01</mu2>
+            <fdir1>0 0 1</fdir1>
+            <slip1>0</slip1>
+            <slip2>0</slip2>
+          </ode>
+        </friction>
+        <bounce>
+          <restitution_coefficient>0.0</restitution_coefficient>
+          <threshold>100000.0</threshold>
+        </bounce>
+        <contact>
+          <ode>
+            <soft_cfm>0.0</soft_cfm>
+            <soft_erp>0.2</soft_erp>
+            <kp>1000000000000.0</kp>
+            <kd>1.0</kd>
+            <max_vel>100.0</max_vel>
+            <min_depth>0.001</min_depth>
+          </ode>
+        </contact>
+      </surface>
     </gazebo>
 
     <!-- Servo transmission -->
