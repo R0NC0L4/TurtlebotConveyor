@@ -114,7 +114,7 @@
 
 
     <!-- Camera RGB -->
-    <xacro:camera base_link="base_link"/>
+    <!-- <xacro:camera base_link="base_link"/> -->
 
     <!-- Camera RGBD realsense d435i -->
     <!-- github: https://github.com/m-tartari/realsense_gazebo_description?tab=readme-ov-file -->
