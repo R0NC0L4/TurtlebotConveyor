@@ -113,8 +113,15 @@
         translateZ="${-base_height-0.011}" flipY="1" flipX="1" rot="1" />
 
 
-    <!-- Camera -->
-    <xacro:camera base_link="base_link"/>
+    <!-- Camera RGB -->
+    <!-- <xacro:camera base_link="base_link"/> -->
+
+    <!-- Camera RGBD realsense d435i -->
+    <!-- github: https://github.com/m-tartari/realsense_gazebo_description?tab=readme-ov-file -->
+    <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro"/>
+    <xacro:sensor_d435i parent="base_link" name="D435i_camera" topics_ns="D435i_camera"> 
+      <origin xyz="0.0 0.0 0.1" rpy="0.0 0.0 0.0"/>
+    </xacro:sensor_d435i>
     
 
     <gazebo>

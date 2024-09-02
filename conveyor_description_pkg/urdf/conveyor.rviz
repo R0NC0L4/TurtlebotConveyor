@@ -8,6 +8,8 @@ Panels:
         - /Status1
         - /TF1
         - /TF1/Frames1
+        - /DepthCloud1
+        - /DepthCloud1/Auto Size1
       Splitter Ratio: 0.6823529601097107
     Tree Height: 549
   - Class: rviz/Selection
@@ -27,7 +29,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: DepthCloud
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -59,6 +61,63 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
+        D435i_camera_accel_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_accel_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_gyro_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_gyro_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        D435i_camera_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D435i_camera_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -93,11 +152,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        hokuyo_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         servo_back_left_link:
           Alpha: 1
           Show Axes: false
@@ -126,9 +180,39 @@ Visualization Manager:
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        D435i_camera_accel_frame:
+          Value: true
+        D435i_camera_accel_optical_frame:
+          Value: true
+        D435i_camera_bottom_screw_frame:
+          Value: true
+        D435i_camera_color_frame:
+          Value: true
+        D435i_camera_color_optical_frame:
+          Value: true
+        D435i_camera_depth_frame:
+          Value: true
+        D435i_camera_depth_optical_frame:
+          Value: true
+        D435i_camera_gyro_frame:
+          Value: true
+        D435i_camera_gyro_optical_frame:
+          Value: true
+        D435i_camera_left_ir_frame:
+          Value: true
+        D435i_camera_left_ir_optical_frame:
+          Value: true
+        D435i_camera_link:
+          Value: true
+        D435i_camera_right_ir_frame:
+          Value: true
+        D435i_camera_right_ir_optical_frame:
+          Value: true
         back_left_wheel:
           Value: false
         back_right_wheel:
@@ -140,8 +224,6 @@ Visualization Manager:
         front_left_wheel:
           Value: false
         front_right_wheel:
-          Value: false
-        hokuyo_link:
           Value: false
         servo_back_left_link:
           Value: false
@@ -160,8 +242,26 @@ Visualization Manager:
       Tree:
         base_footprint:
           base_link:
-            hokuyo_link:
-              {}
+            D435i_camera_bottom_screw_frame:
+              D435i_camera_link:
+                D435i_camera_accel_frame:
+                  D435i_camera_accel_optical_frame:
+                    {}
+                D435i_camera_depth_frame:
+                  D435i_camera_color_frame:
+                    D435i_camera_color_optical_frame:
+                      {}
+                  D435i_camera_depth_optical_frame:
+                    {}
+                  D435i_camera_left_ir_frame:
+                    D435i_camera_left_ir_optical_frame:
+                      {}
+                  D435i_camera_right_ir_frame:
+                    D435i_camera_right_ir_optical_frame:
+                      {}
+                D435i_camera_gyro_frame:
+                  D435i_camera_gyro_optical_frame:
+                    {}
             servo_back_left_link:
               back_left_wheel:
                 {}
@@ -204,6 +304,42 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Alpha: 1
+      Auto Size:
+        Auto Size Factor: 1
+        Value: true
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/DepthCloud
+      Color: 255; 255; 255
+      Color Image Topic: ""
+      Color Transformer: RGB8
+      Color Transport Hint: raw
+      Decay Time: 0
+      Depth Map Topic: /D435i_camera/depth/image_rect_raw
+      Depth Map Transport Hint: raw
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: DepthCloud
+      Occlusion Compensation:
+        Occlusion Time-Out: 30
+        Value: false
+      Position Transformer: XYZ
+      Queue Size: 5
+      Selectable: true
+      Size (Pixels): 3
+      Style: Flat Squares
+      Topic Filter: true
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -232,7 +368,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.7132591605186462
+      Distance: 1.6300760507583618
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -248,9 +384,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3702027201652527
+      Pitch: 0.5102026462554932
       Target Frame: <Fixed Frame>
-      Yaw: 6.2435712814331055
+      Yaw: 3.2185654640197754
     Saved: ~
 Window Geometry:
   Displays:
