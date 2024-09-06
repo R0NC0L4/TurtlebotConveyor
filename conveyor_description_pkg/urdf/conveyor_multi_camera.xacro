@@ -163,11 +163,31 @@
         </sensor>
     </gazebo> -->
 
+    <!-- Revolute joint -->
+    <link name="camera_revolute_link"></link>
+    <joint name="camera_joint" type="revolute">
+        <parent link="base_link" />
+        <child link="camera_revolute_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.14" upper="3.14" effort="50" velocity="10" />
+    </joint>
+    <!-- Transmission joint camera -->
+    <transmission name="camera_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="camera_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="camera_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
     <!-- Camera RGBD realsense d435i -->
     <!-- github: https://github.com/m-tartari/realsense_gazebo_description?tab=readme-ov-file -->
     <xacro:arg name="robotns" default="conveyor" />
     <xacro:include filename="$(find realsense_gazebo_description)/urdf/_d435i.urdf.xacro"/>
-    <xacro:sensor_d435i parent="base_link" name="/$(arg robotns)/D435i_camera" topics_ns="$(arg robotns)/D435i_camera"> 
+    <xacro:sensor_d435i parent="camera_revolute_link" name="/$(arg robotns)/D435i_camera" topics_ns="$(arg robotns)/D435i_camera"> 
       <origin xyz="0.0 0.0 0.1" rpy="0.0 0.0 0.0"/>
     </xacro:sensor_d435i>
 
