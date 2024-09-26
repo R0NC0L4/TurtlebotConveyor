@@ -84,6 +84,40 @@
         <turnGravityOff>false</turnGravityOff>
     </gazebo>
 
+    <!-- palla -->
+    <link name="ball_link">
+        <inertial>
+            <mass value="0.0000000001" />
+            <origin xyz="0 0 0" />
+            <xacro:box_inertia m="0.0000000001" w="0.0000000001" h="0.0000000001"
+                d="0.0000000001" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <sphere radius="0.1"/>
+            </geometry>
+            <material name="White" />
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0 " />
+            <geometry>
+                <sphere radius="0.0000000001"/>
+            </geometry>
+        </collision>
+    </link>
+    <gazebo reference="ball_link">
+        <material>Gazebo/Red</material>
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+    <joint name="ball_link" type="fixed">
+        <origin xyz="-0.2 0  0" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="ball_link" />
+    </joint>
+
+
+
 
     <!-- Wheel 1 -->
     <xacro:servo front="front" right="left" parent="base_link" axisX="1" axisY="1"
